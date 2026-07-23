@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#7a2b2e"/><text x="50" y="60" font-size="30" fill="#f7f1e7" text-anchor="middle" font-family="serif">L</text></svg></template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: #7a2b2e; color: #f6efe6; }
+  a { color: #7a2b2e; text-decoration: none; }
+  a:hover { color: #5f2022; }
+
+  /* __om_responsive */
+  @media (max-width:880px){
+    [style*="grid-template-columns:repeat(5"],
+    [style*="grid-template-columns:repeat(4"],
+    [style*="grid-template-columns:repeat(3"],
+    [style*="grid-template-columns:repeat(2"],
+    [style*="grid-template-columns:1fr 1fr"],
+    [style*="grid-template-columns:1.6fr"],
+    [style*="grid-template-columns:1.4fr"],
+    [style*="grid-template-columns:220px"],
+    [style*="grid-template-columns:260px"]{ grid-template-columns:1fr !important; }
+    [style*="gap:70px"]{ gap:40px !important; }
+    [style*="height:520px"]{ height:auto !important; min-height:480px; }
+  }
+  @media (max-width:620px){
+    [style*="padding:24px 5vw"],[style*="padding:20px 5vw"]{ flex-wrap:wrap !important; row-gap:12px !important; }
+    [style*="gap:34px"][style*="align-items:center"],
+    [style*="gap:30px"][style*="align-items:center"]{ flex-wrap:wrap !important; gap:10px 16px !important; }
+    [style*="gap:18px"][style*="justify-content:center"]{ flex-wrap:wrap !important; }
+    [style*="max-width:520px"][style*="padding:44px"]{ padding:26px !important; }
+    [style*="padding:90px 8vw"],[style*="padding:100px 8vw"],[style*="padding:130px 8vw"],[style*="padding:80px 8vw"]{ padding-left:7vw !important; padding-right:7vw !important; }
+  }
+</style>
+</helmet>
+
+<div style="background:#f7f1e7; color:#2a2320; font-family:'Jost',sans-serif; min-height:100vh; width:100%; overflow-x:hidden;">
+
+  <!-- NAV -->
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:20px 5vw; border-bottom:1px solid rgba(42,35,32,0.1);">
+    <a href="index.html" style="display:flex; align-items:center; gap:11px;">
+      <img src="assets/loom-mark.png" alt="Loom" style="height:34px; width:auto;">
+      <span style="font-family:'Cormorant Garamond',serif; font-size:25px; letter-spacing:0.03em; font-weight:500; color:#2a2320;">Loom</span>
+    </a>
+    <div style="display:flex; gap:30px; align-items:center;">
+      <a href="index.html" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Home</a>
+      <a href="app.html" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Marketplace</a>
+      <a href="integrations.html" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Integrations</a>
+      <a href="app.html" style="background:#7a2b2e; color:#f7f1e7; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; padding:11px 24px;" style-hover="background:#5f2022;">Start Free Trial</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section style="max-width:900px; margin:0 auto; padding:90px 5vw 50px; text-align:center;">
+    <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:22px;">Pricing</div>
+    <h1 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(40px,6vw,72px); line-height:1.04; margin:0 0 24px;">Your craft is the hard part.<br><em style="font-style:italic; color:#7a2b2e;">Running the business shouldn't be.</em></h1>
+    <p style="font-size:19px; line-height:1.7; color:#4a3f38; max-width:620px; margin:0 auto 14px;">Loom brings your bookings, clients, messages and payments into one calm place — and puts you in front of couples actively looking for what you do.</p>
+    <p style="font-size:15px; color:#8a7b6e; margin:0;">14-day free trial · No card required · Cancel anytime</p>
+  </section>
+
+  <!-- VALUE ANCHOR -->
+  <section style="max-width:1100px; margin:0 auto; padding:20px 5vw 40px;">
+    <div style="background:#2a2320; color:#f7f1e7; padding:44px 48px; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
+      <div>
+        <div style="font-size:12px; letter-spacing:0.25em; text-transform:uppercase; color:#c99a4a; margin-bottom:14px;">The math is simple</div>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:29px; line-height:1.35; font-weight:400; margin:0;">Book <em style="font-style:italic; color:#e3b975;">one</em> extra client through Loom and the platform has paid for itself for the year — twice over.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:18px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid rgba(247,241,231,0.2); padding-bottom:14px;">
+          <span style="font-size:15px; color:rgba(247,241,231,0.75);">Average event booking</span>
+          <span style="font-family:'Cormorant Garamond',serif; font-size:30px; color:#f7f1e7;">$2,400</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+          <span style="font-size:15px; color:rgba(247,241,231,0.75);">Loom, per year</span>
+          <span style="font-family:'Cormorant Garamond',serif; font-size:30px; color:#e3b975;">from $348</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIERS -->
+  <section style="max-width:1180px; margin:0 auto; padding:40px 5vw 30px;">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:stretch;">
+
+      <!-- Starter -->
+      <div style="background:#fff; border:1px solid rgba(42,35,32,0.12); padding:38px 34px; display:flex; flex-direction:column;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:500; margin-bottom:6px;">Starter</div>
+        <p style="font-size:14px; color:#8a7b6e; line-height:1.6; margin:0 0 24px; min-height:60px;">List your practice and take bookings. For new vendors testing the waters.</p>
+        <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:4px;">
+          <span style="font-family:'Cormorant Garamond',serif; font-size:52px; line-height:1;">Free</span>
+        </div>
+        <div style="font-size:13px; color:#8a7b6e; margin-bottom:28px;">+ 12% per booking</div>
+        <a href="app.html" style="text-align:center; border:1px solid #2a2320; color:#2a2320; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:14px; margin-bottom:28px;" style-hover="background:#2a2320; color:#f7f1e7;">Start Free</a>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <sc-for list="{{ starterFeatures }}" as="f" hint-placeholder-count="4">
+            <div style="display:flex; gap:10px; font-size:14px; color:#3a322c; line-height:1.5;"><span style="color:#7a2b2e;">✦</span><span>{{ f }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- Professional (featured) -->
+      <div style="background:#7a2b2e; color:#f7f1e7; padding:38px 34px; display:flex; flex-direction:column; position:relative; box-shadow:0 30px 70px -30px rgba(122,43,46,0.6);">
+        <div style="position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:#c99a4a; color:#2a2320; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; padding:6px 16px;">Most Popular</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:500; margin-bottom:6px;">Professional</div>
+        <p style="font-size:14px; color:rgba(247,241,231,0.8); line-height:1.6; margin:0 0 24px; min-height:60px;">The full business, in one place. For working vendors ready to grow.</p>
+        <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:4px;">
+          <span style="font-family:'Cormorant Garamond',serif; font-size:52px; line-height:1;">$39</span>
+          <span style="font-size:15px; color:rgba(247,241,231,0.7);">/month</span>
+        </div>
+        <div style="font-size:13px; color:rgba(247,241,231,0.7); margin-bottom:28px;">+ just 8% per booking</div>
+        <a href="app.html" style="text-align:center; background:#f7f1e7; color:#7a2b2e; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:14px; margin-bottom:28px;" style-hover="background:#fff;">Start 14-Day Free Trial</a>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <sc-for list="{{ proFeatures }}" as="f" hint-placeholder-count="6">
+            <div style="display:flex; gap:10px; font-size:14px; color:#f7f1e7; line-height:1.5;"><span style="color:#e3b975;">✦</span><span>{{ f }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- Studio -->
+      <div style="background:#fff; border:1px solid rgba(42,35,32,0.12); padding:38px 34px; display:flex; flex-direction:column;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:500; margin-bottom:6px;">Studio</div>
+        <p style="font-size:14px; color:#8a7b6e; line-height:1.6; margin:0 0 24px; min-height:60px;">For established studios with a team and a full calendar.</p>
+        <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:4px;">
+          <span style="font-family:'Cormorant Garamond',serif; font-size:52px; line-height:1;">$99</span>
+          <span style="font-size:15px; color:#8a7b6e;">/month</span>
+        </div>
+        <div style="font-size:13px; color:#8a7b6e; margin-bottom:28px;">+ just 5% per booking</div>
+        <a href="app.html" style="text-align:center; border:1px solid #2a2320; color:#2a2320; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:14px; margin-bottom:28px;" style-hover="background:#2a2320; color:#f7f1e7;">Start Free Trial</a>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <sc-for list="{{ studioFeatures }}" as="f" hint-placeholder-count="6">
+            <div style="display:flex; gap:10px; font-size:14px; color:#3a322c; line-height:1.5;"><span style="color:#7a2b2e;">✦</span><span>{{ f }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center; font-size:14px; color:#8a7b6e; margin:26px 0 0;">Save two months when you pay yearly. Couples and clients always use Loom free.</p>
+  </section>
+
+  <!-- WHY IT'S WORTH IT -->
+  <section style="max-width:1100px; margin:0 auto; padding:70px 5vw 30px;">
+    <div style="text-align:center; margin-bottom:48px;">
+      <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:16px;">Why vendors stay</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,4vw,46px); margin:0;">It replaces five tools you're already paying for.</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:28px;">
+      <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="6">
+        <div style="border-top:2px solid #c99a4a; padding-top:20px;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:500; margin-bottom:10px;">{{ b.title }}</div>
+          <p style="font-size:15px; line-height:1.65; color:#4a3f38; margin:0;">{{ b.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section style="max-width:820px; margin:0 auto; padding:70px 5vw; text-align:center;">
+    <div style="font-size:15px; color:#c99a4a; margin-bottom:20px;">★★★★★</div>
+    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(24px,3.4vw,34px); line-height:1.45; color:#2a2320; margin:0 0 24px;">"I booked three weddings in my first month on Loom. It paid for itself before I'd finished setting up my profile."</p>
+    <div style="font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:#8a7b6e;">— Sanya Kapoor Studios, Wedding Photography · Toronto</div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="max-width:820px; margin:0 auto; padding:30px 5vw 70px;">
+    <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:34px; text-align:center; margin:0 0 40px;">Questions, answered</h2>
+    <div style="display:flex; flex-direction:column; gap:0;">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+        <div style="border-bottom:1px solid rgba(42,35,32,0.12); padding:24px 0;">
+          <div style="font-size:17px; font-weight:500; color:#2a2320; margin-bottom:8px;">{{ f.q }}</div>
+          <p style="font-size:15px; line-height:1.65; color:#4a3f38; margin:0;">{{ f.a }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section style="max-width:1100px; margin:0 auto 80px; padding:0 5vw;">
+    <div style="background:#5f6b52; color:#f7f1e7; padding:64px 48px; text-align:center;">
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,4.4vw,50px); margin:0 0 18px;">Start free. Grow into it.</h2>
+      <p style="font-size:17px; line-height:1.7; color:rgba(247,241,231,0.85); max-width:520px; margin:0 auto 32px;">Set up your profile in ten minutes and take your first booking today. No card, no risk.</p>
+      <a href="app.html" style="display:inline-block; background:#f7f1e7; color:#5f6b52; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; padding:17px 40px;" style-hover="background:#fff;">Create Your Free Listing</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding:44px 5vw; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; border-top:1px solid rgba(42,35,32,0.12); font-size:13px; color:#6b5e54;">
+    <a href="index.html"><img src="assets/loom-logo-full.png" alt="Loom — weaving connections for unforgettable events" style="width:120px; height:auto;"></a>
+    <div style="font-family:'Cormorant Garamond',serif; font-style:italic; letter-spacing:0.08em;">© 2026 Loom · theloomplatform.com</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      starterFeatures: [
+        'Public marketplace listing',
+        'Accept booking requests',
+        'Client messaging inbox',
+        'Basic profile & portfolio',
+      ],
+      proFeatures: [
+        'Everything in Starter',
+        'Full booking calendar & dashboard',
+        'Unlimited portfolio & services',
+        'Priority in search results',
+        'Automated client reminders',
+        'Payments & invoicing built in',
+      ],
+      studioFeatures: [
+        'Everything in Professional',
+        'Up to 5 team member logins',
+        'Featured placement & badge',
+        'Advanced booking analytics',
+        'Lowest 5% booking fee',
+        'Dedicated onboarding',
+      ],
+      benefits: [
+        { title: 'Get found', body: 'Couples across the diaspora — and planning weddings back home — search for photographers, makeup artists, venues and planners and discover you. No ad spend, no cold outreach.' },
+        { title: 'Book faster', body: 'Requests, dates and details land in one place. Accept with a tap instead of chasing email threads.' },
+        { title: 'Look the part', body: 'A polished profile and portfolio that makes independent practices look every bit as credible as big studios.' },
+        { title: 'Stay organized', body: 'Every client, event and message in one calm dashboard — the day-of chaos handled before it starts.' },
+        { title: 'Get paid', body: 'Send invoices and take deposits through Loom. No more awkward payment follow-ups.' },
+        { title: 'Only pay when you win', body: 'Low monthly price, small booking fee, and clients are always free. Your cost grows only as you do.' },
+      ],
+      faqs: [
+        { q: 'Is there really a free plan?', a: 'Yes. Starter is free forever — list your practice and take bookings with a 12% fee per completed booking. Upgrade only when the extra tools earn their keep.' },
+        { q: 'What does the booking fee cover?', a: 'Payment processing, buyer protection, and the marketing that puts you in front of new clients. Lower tiers of fee come with paid plans.' },
+        { q: 'Do my clients pay anything?', a: 'Never. Couples and clients browse, book and message on Loom completely free — that keeps demand high for you.' },
+        { q: 'Can I cancel anytime?', a: 'Anytime, no penalty. Your listing simply drops back to the free Starter plan.' },
+        { q: 'How long does setup take?', a: 'About ten minutes. Add your services, a few portfolio images and a short bio, and you can accept your first booking the same day.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

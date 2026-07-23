@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#7a2b2e"/><text x="50" y="58" font-size="34" fill="#f7f1e7" text-anchor="middle" font-family="serif">L</text></svg></template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: #7a2b2e; color: #f6efe6; }
+
+  /* __om_responsive */
+  @media (max-width:880px){
+    [style*="grid-template-columns:repeat(5"],
+    [style*="grid-template-columns:repeat(4"],
+    [style*="grid-template-columns:repeat(3"],
+    [style*="grid-template-columns:repeat(2"],
+    [style*="grid-template-columns:1fr 1fr"],
+    [style*="grid-template-columns:1.6fr"],
+    [style*="grid-template-columns:1.4fr"],
+    [style*="grid-template-columns:220px"],
+    [style*="grid-template-columns:260px"]{ grid-template-columns:1fr !important; }
+    [style*="gap:70px"]{ gap:40px !important; }
+    [style*="height:520px"]{ height:auto !important; min-height:480px; }
+  }
+  @media (max-width:620px){
+    [style*="padding:24px 5vw"],[style*="padding:20px 5vw"]{ flex-wrap:wrap !important; row-gap:12px !important; }
+    [style*="gap:34px"][style*="align-items:center"],
+    [style*="gap:30px"][style*="align-items:center"]{ flex-wrap:wrap !important; gap:10px 16px !important; }
+    [style*="gap:18px"][style*="justify-content:center"]{ flex-wrap:wrap !important; }
+    [style*="max-width:520px"][style*="padding:44px"]{ padding:26px !important; }
+    [style*="padding:90px 8vw"],[style*="padding:100px 8vw"],[style*="padding:130px 8vw"],[style*="padding:80px 8vw"]{ padding-left:7vw !important; padding-right:7vw !important; }
+  }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="background:#f7f1e7; color:#2a2320; font-family:'Jost',sans-serif; width:100%; overflow-x:hidden;">
+
+  <!-- NAV -->
+  <div style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:24px 5vw; background:rgba(247,241,231,0.94); backdrop-filter:blur(6px); border-bottom:1px solid rgba(42,35,32,0.1);">
+    <a href="index.html" style="display:flex; align-items:center; gap:11px; text-decoration:none;">
+      <img src="assets/loom-mark.png" alt="Loom" style="height:34px; width:auto;">
+      <span style="font-family:'Cormorant Garamond',serif; font-size:24px; letter-spacing:0.03em; font-weight:500; color:#2a2320;">Loom</span>
+    </a>
+    <div style="display:flex; gap:34px; align-items:center;">
+      <a href="loom-platform-standalone.html" style="color:#7a2b2e; text-decoration:none; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;">Platform</a>
+      <a href="app.html" style="color:#2a2320; text-decoration:none; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Marketplace</a>
+      <a href="pricing.html" style="color:#2a2320; text-decoration:none; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Pricing</a>
+      <a href="integrations.html" style="color:#2a2320; text-decoration:none; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Integrations</a>
+      <a href="app.html" style="color:#2a2320; text-decoration:none; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Log In</a>
+      <a href="app.html" style="background:#7a2b2e; color:#f7f1e7; text-decoration:none; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; padding:11px 24px;" style-hover="background:#5f2022;">Get Started</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section style="padding:100px 8vw 80px; text-align:center; max-width:940px; margin:0 auto;">
+    <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:24px;">The Platform</div>
+    <h1 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(38px,5.4vw,66px); line-height:1.1; margin:0 0 26px;">Everything your wedding business runs on, in one place.</h1>
+    <p style="font-size:16.5px; line-height:1.7; color:#4a3f38; max-width:600px; margin:0 auto;">Beyond the marketplace, Loom gives vendors the tools to run the whole business — couples, bookings, inventory and billing in one connected system, so every enquiry, event and invoice stays in sync.</p>
+  </section>
+
+  <!-- MODULE NAV -->
+  <section style="padding:0 8vw 40px; display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+    <sc-for list="{{ modules }}" as="m" hint-placeholder-count="5">
+      <a href="{{ m.anchor }}" style="border:1px solid rgba(42,35,32,0.2); color:#2a2320; text-decoration:none; font-size:13px; letter-spacing:0.04em; padding:10px 22px;" style-hover="border-color:#7a2b2e; color:#7a2b2e;">{{ m.title }}</a>
+    </sc-for>
+  </section>
+
+  <!-- MODULE SECTIONS (unrolled: literal image-slot src per module for asset bundling) -->
+  <section id="clients" style="padding:90px 8vw; display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; background:#f7f1e7; border-top:1px solid rgba(42,35,32,0.1);">
+    <div style="order:1;">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:15px; color:#c99a4a; margin-bottom:18px;">01</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(28px,3.6vw,44px); margin:0 0 22px;">Clients</h2>
+      <p style="font-size:15.5px; line-height:1.8; color:#4a3f38; margin:0 0 26px; max-width:460px;">A living record of every relationship — preferences, sizing, history and every conversation, always current.</p>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:13px;">
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Full client profiles & history</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Preferences and sizing on file</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Direct messaging & communications</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Shared notes across your team</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Client self-service portal</li>
+      </ul>
+    </div>
+    <div style="height:440px; order:2;">
+      <image-slot id="mod-clients" shape="rect" fit="cover" placeholder="Clients screenshot" src="assets/screenshot-clients.png"></image-slot>
+    </div>
+  </section>
+  <section id="projects" style="padding:90px 8vw; display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; background:#efe3d0; border-top:1px solid rgba(42,35,32,0.1);">
+    <div style="order:2;">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:15px; color:#c99a4a; margin-bottom:18px;">02</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(28px,3.6vw,44px); margin:0 0 22px;">Projects & Booking</h2>
+      <p style="font-size:15.5px; line-height:1.8; color:#4a3f38; margin:0 0 26px; max-width:460px;">One calendar for every fitting, consult and event — across every location your practice runs in.</p>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:13px;">
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Unified booking calendar across all locations</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Project stages from intake to delivery</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Assign each project to a studio, client site, or venue</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Location-level availability & scheduling rules</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Automated client reminders</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Conflict & double-booking prevention</li>
+      </ul>
+    </div>
+    <div style="height:440px; order:1;">
+      <image-slot id="mod-projects" shape="rect" fit="cover" placeholder="Projects & Booking screenshot" src="assets/screenshot-projects.png"></image-slot>
+    </div>
+  </section>
+  <section id="inventory" style="padding:90px 8vw; display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; background:#f7f1e7; border-top:1px solid rgba(42,35,32,0.1);">
+    <div style="order:1;">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:15px; color:#c99a4a; margin-bottom:18px;">03</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(28px,3.6vw,44px); margin:0 0 22px;">Inventory & Vendors</h2>
+      <p style="font-size:15.5px; line-height:1.8; color:#4a3f38; margin:0 0 26px; max-width:460px;">Track every piece and every vendor relationship from sourcing through return.</p>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:13px;">
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Vendor directory & order tracking</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Piece-level status and current location</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Purchase orders & sourcing history</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Low-stock and return alerts</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Vendor performance and reliability notes</li>
+      </ul>
+    </div>
+    <div style="height:440px; order:2;">
+      <image-slot id="mod-inventory" shape="rect" fit="cover" placeholder="Inventory & Vendors screenshot" src="assets/screenshot-inventory.png"></image-slot>
+    </div>
+  </section>
+  <section id="billing" style="padding:90px 8vw; display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; background:#efe3d0; border-top:1px solid rgba(42,35,32,0.1);">
+    <div style="order:2;">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:15px; color:#c99a4a; margin-bottom:18px;">04</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(28px,3.6vw,44px); margin:0 0 22px;">Billing</h2>
+      <p style="font-size:15.5px; line-height:1.8; color:#4a3f38; margin:0 0 26px; max-width:460px;">Merchant services, accounting and bookkeeping tied directly to the project and client they belong to.</p>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:13px;">
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Integrated merchant services for payments</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Project-linked invoicing</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Automatic bookkeeping & reconciliation</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Accounting-ready reports and exports</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Recurring and installment billing</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Automatic payment tracking & alerts</li>
+      </ul>
+    </div>
+    <div style="height:440px; order:1;">
+      <image-slot id="mod-billing" shape="rect" fit="cover" placeholder="Billing screenshot" src="assets/screenshot-billing.png"></image-slot>
+    </div>
+  </section>
+  <section id="staff" style="padding:90px 8vw; display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; background:#f7f1e7; border-top:1px solid rgba(42,35,32,0.1);">
+    <div style="order:1;">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:15px; color:#c99a4a; margin-bottom:18px;">05</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(28px,3.6vw,44px); margin:0 0 22px;">Staff & Access</h2>
+      <p style="font-size:15.5px; line-height:1.8; color:#4a3f38; margin:0 0 26px; max-width:460px;">Bring on stylists, assistants and managers with permissions scoped to their role, clients and locations.</p>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:13px;">
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Role-based managerial access</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Per-location and per-client permissions</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Staff onboarding & offboarding</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Activity and assignment tracking</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Custom access levels per team member</li>
+        <li style="font-size:14.5px; color:#2a2320; display:flex; gap:10px; align-items:baseline;"><span style="color:#c99a4a;">—</span>Approval workflows for sensitive actions</li>
+      </ul>
+    </div>
+    <div style="height:440px; order:2;">
+      <image-slot id="mod-staff" shape="rect" fit="cover" placeholder="Staff & Access screenshot" src="assets/screenshot-staff.png"></image-slot>
+    </div>
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section style="padding:100px 8vw; text-align:center; background:#2a2320; color:#f7f1e7;">
+    <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#e3b975; margin-bottom:24px;">Works With Your Stack</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,3.8vw,46px); margin:0 0 50px;">Connects to the tools you already use.</h2>
+    <div style="display:flex; justify-content:center; gap:60px; flex-wrap:wrap; opacity:0.85;">
+      <sc-for list="{{ integrations }}" as="i" hint-placeholder-count="5">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:20px;">{{ i.name }}</div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:130px 8vw; text-align:center; background:#efe3d0;">
+    <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:24px;">Ready When You Are</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(32px,4.4vw,54px); margin:0 0 36px;">See Loom running your practice.</h2>
+    <a href="app.html" style="display:inline-block; background:#7a2b2e; color:#f7f1e7; text-decoration:none; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; padding:18px 44px;" style-hover="background:#5f2022;">Start Free Trial</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding:56px 8vw; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; border-top:1px solid rgba(42,35,32,0.15); font-size:13px; color:#6b5e54;">
+    <a href="index.html"><img src="assets/loom-logo-full.png" alt="Loom — weaving connections for unforgettable events" style="width:120px; height:auto;"></a>
+    <div>hello@theloomplatform.com</div>
+    <div style="font-family:'Cormorant Garamond',serif; font-style:italic; letter-spacing:0.08em;">© 2026</div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      modules: [
+        { id:'clients', anchor:'#clients', num:'01', title:'Clients', desc:'A living record of every relationship — preferences, sizing, history and every conversation, always current.', points:['Full client profiles & history','Preferences and sizing on file','Direct messaging & communications','Shared notes across your team','Client self-service portal'], imgId:'mod-clients', imgOrder:1, imgOrder2:2, bg:'#f7f1e7', imgSrc:'assets/screenshot-clients.png' },
+        { id:'projects', anchor:'#projects', num:'02', title:'Projects & Booking', desc:'One calendar for every fitting, consult and event — across every location your practice runs in.', points:['Unified booking calendar across all locations','Project stages from intake to delivery','Assign each project to a studio, client site, or venue','Location-level availability & scheduling rules','Automated client reminders','Conflict & double-booking prevention'], imgId:'mod-projects', imgOrder:2, imgOrder2:1, bg:'#efe3d0', imgSrc:'assets/screenshot-projects.png' },
+        { id:'inventory', anchor:'#inventory', num:'03', title:'Inventory & Vendors', desc:'Track every piece and every vendor relationship from sourcing through return.', points:['Vendor directory & order tracking','Piece-level status and current location','Purchase orders & sourcing history','Low-stock and return alerts','Vendor performance and reliability notes'], imgId:'mod-inventory', imgOrder:1, imgOrder2:2, bg:'#f7f1e7', imgSrc:'assets/screenshot-inventory.png' },
+        { id:'billing', anchor:'#billing', num:'04', title:'Billing', desc:'Merchant services, accounting and bookkeeping tied directly to the project and client they belong to.', points:['Integrated merchant services for payments','Project-linked invoicing','Automatic bookkeeping & reconciliation','Accounting-ready reports and exports','Recurring and installment billing','Automatic payment tracking & alerts'], imgId:'mod-billing', imgOrder:2, imgOrder2:1, bg:'#efe3d0', imgSrc:'assets/screenshot-billing.png' },
+        { id:'staff', anchor:'#staff', num:'05', title:'Staff & Access', desc:'Bring on stylists, assistants and managers with permissions scoped to their role, clients and locations.', points:['Role-based managerial access','Per-location and per-client permissions','Staff onboarding & offboarding','Activity and assignment tracking','Custom access levels per team member','Approval workflows for sensitive actions'], imgId:'mod-staff', imgOrder:1, imgOrder2:2, bg:'#f7f1e7' },
+      ],
+      integrations: [{name:'Google Calendar'},{name:'QuickBooks'},{name:'Stripe'},{name:'Gmail'},{name:'Dropbox'}],
+    };
+  }
+}
+
+</script>
+</body>
+</html>
