@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#7a2b2e"/><text x="50" y="60" font-size="30" fill="#f7f1e7" text-anchor="middle" font-family="serif">L</text></svg></template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: #7a2b2e; color: #f6efe6; }
+  input, select, textarea, button { font-family: 'Jost', sans-serif; }
+  a { color: #7a2b2e; }
+  a:hover { color: #5f2022; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: #7a2b2e !important; }
+  input::placeholder, textarea::placeholder { color: #a89b8e; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: rgba(42,35,32,0.2); border-radius: 10px; }
+
+  /* __om_responsive */
+  @media (max-width:880px){
+    [style*="grid-template-columns:repeat(5"],
+    [style*="grid-template-columns:repeat(4"],
+    [style*="grid-template-columns:repeat(3"],
+    [style*="grid-template-columns:repeat(2"],
+    [style*="grid-template-columns:1fr 1fr"],
+    [style*="grid-template-columns:1.6fr"],
+    [style*="grid-template-columns:1.4fr"],
+    [style*="grid-template-columns:220px"],
+    [style*="grid-template-columns:260px"]{ grid-template-columns:1fr !important; }
+    [style*="gap:70px"]{ gap:40px !important; }
+    [style*="height:520px"]{ height:auto !important; min-height:480px; }
+  }
+  @media (max-width:620px){
+    [style*="padding:24px 5vw"],[style*="padding:20px 5vw"]{ flex-wrap:wrap !important; row-gap:12px !important; }
+    [style*="gap:34px"][style*="align-items:center"],
+    [style*="gap:30px"][style*="align-items:center"]{ flex-wrap:wrap !important; gap:10px 16px !important; }
+    [style*="gap:18px"][style*="justify-content:center"]{ flex-wrap:wrap !important; }
+    [style*="max-width:520px"][style*="padding:44px"]{ padding:26px !important; }
+    [style*="padding:90px 8vw"],[style*="padding:100px 8vw"],[style*="padding:130px 8vw"],[style*="padding:80px 8vw"]{ padding-left:7vw !important; padding-right:7vw !important; }
+  }
+</style>
+</helmet>
+
+<div style="background:#f7f1e7; color:#2a2320; font-family:'Jost',sans-serif; min-height:100vh; width:100%; overflow-x:hidden;">
+
+  <!-- ============ NAV ============ -->
+  <div style="position:sticky; top:0; z-index:60; display:flex; align-items:center; justify-content:space-between; padding:20px 5vw; background:rgba(247,241,231,0.95); backdrop-filter:blur(8px); border-bottom:1px solid rgba(42,35,32,0.1);">
+    <div onClick="{{ goMarket }}" style="display:flex; align-items:center; gap:11px; cursor:pointer;">
+      <img src="assets/loom-mark.png" alt="Loom" style="height:34px; width:auto;">
+      <span style="font-family:'Cormorant Garamond',serif; font-size:25px; letter-spacing:0.03em; font-weight:500;">Loom</span>
+    </div>
+    <div style="display:flex; gap:30px; align-items:center;">
+      <a href="index.html" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none;" style-hover="color:#7a2b2e;">Home</a>
+      <span onClick="{{ goMarket }}" style="color:#2a2320; cursor:pointer; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Marketplace</span>
+      <a href="pricing.html" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none;" style-hover="color:#7a2b2e;">Planning Tools</a>
+      <a href="integrations.html" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none;" style-hover="color:#7a2b2e;">Integrations</a>
+      <a href="loom-platform-standalone.html" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none;" style-hover="color:#7a2b2e;">Platform</a>
+      <sc-if value="{{ loggedIn }}" hint-placeholder-val="{{ false }}">
+        <span onClick="{{ goDash }}" style="color:#2a2320; cursor:pointer; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Dashboard</span>
+        <span style="font-size:13px; color:#8a7b6e;">{{ userLabel }}</span>
+        <span onClick="{{ logout }}" style="border:1px solid rgba(42,35,32,0.3); color:#2a2320; cursor:pointer; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; padding:9px 20px;" style-hover="border-color:#2a2320;">Log Out</span>
+      </sc-if>
+      <sc-if value="{{ loggedOut }}" hint-placeholder-val="{{ true }}">
+        <span onClick="{{ goLogin }}" style="color:#2a2320; cursor:pointer; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Log In</span>
+        <span onClick="{{ goSignup }}" style="background:#7a2b2e; color:#f7f1e7; cursor:pointer; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; padding:11px 24px;" style-hover="background:#5f2022;">Get Started</span>
+      </sc-if>
+    </div>
+  </div>
+
+  <!-- ============ TOAST ============ -->
+  <sc-if value="{{ toast }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; bottom:28px; left:50%; transform:translateX(-50%); z-index:90; background:#2a2320; color:#f7f1e7; padding:14px 26px; font-size:14px; letter-spacing:0.02em; box-shadow:0 20px 50px -15px rgba(42,35,32,0.5);">{{ toast }}</div>
+  </sc-if>
+
+  <!-- ============ BOOKING MODAL ============ -->
+  <sc-if value="{{ bookingOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeBooking }}" style="position:fixed; inset:0; z-index:80; background:rgba(42,35,32,0.5); backdrop-filter:blur(3px); display:flex; align-items:center; justify-content:center; padding:24px;">
+      <div onClick="{{ stop }}" style="background:#f7f1e7; width:100%; max-width:520px; padding:44px; box-shadow:0 40px 90px -30px rgba(42,35,32,0.6);">
+        <div style="font-size:11px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:12px;">Request a Booking</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:30px; margin:0 0 26px;">{{ bookingVendorName }}</h3>
+        <label style="display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6b5e54; margin-bottom:8px;">Service</label>
+        <select value="{{ bkService }}" onChange="{{ onBkService }}" style="width:100%; padding:13px 14px; margin-bottom:18px; background:#fff; border:1px solid rgba(42,35,32,0.2); font-size:14px; color:#2a2320;">
+          <sc-for list="{{ bookingServices }}" as="s" hint-placeholder-count="3">
+            <option value="{{ s.name }}">{{ s.label }}</option>
+          </sc-for>
+        </select>
+        <div style="display:flex; gap:14px; margin-bottom:18px;">
+          <div style="flex:1;">
+            <label style="display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6b5e54; margin-bottom:8px;">Date</label>
+            <input type="date" value="{{ bkDate }}" onInput="{{ onBkDate }}" style="width:100%; padding:12px 14px; background:#fff; border:1px solid rgba(42,35,32,0.2); font-size:14px; color:#2a2320;">
+          </div>
+          <div style="flex:1;">
+            <label style="display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6b5e54; margin-bottom:8px;">Time</label>
+            <input type="time" value="{{ bkTime }}" onInput="{{ onBkTime }}" style="width:100%; padding:12px 14px; background:#fff; border:1px solid rgba(42,35,32,0.2); font-size:14px; color:#2a2320;">
+          </div>
+        </div>
+        <label style="display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6b5e54; margin-bottom:8px;">Notes</label>
+        <textarea value="{{ bkNotes }}" onInput="{{ onBkNotes }}" rows="3" placeholder="Tell them about your event, vision, guest count…" style="width:100%; padding:12px 14px; margin-bottom:20px; background:#fff; border:1px solid rgba(42,35,32,0.2); font-size:14px; color:#2a2320; resize:vertical;"></textarea>
+        <div style="background:#efe3d0; padding:16px 18px; margin-bottom:24px; display:flex; gap:12px; align-items:flex-start;">
+          <span style="font-size:16px; line-height:1;">🛡</span>
+          <div>
+            <div style="font-size:13px; font-weight:500; color:#2a2320; margin-bottom:3px;">Loom Protection included</div>
+            <div style="font-size:13px; line-height:1.55; color:#4a3f38;">Your payment is held securely and only released once your booking is complete. Pay by card through Loom to stay covered — refunds and support if anything goes wrong.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:14px;">
+          <span onClick="{{ submitBooking }}" style="flex:1; text-align:center; background:#7a2b2e; color:#f7f1e7; cursor:pointer; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:15px;" style-hover="background:#5f2022;">Send Request</span>
+          <span onClick="{{ closeBooking }}" style="text-align:center; border:1px solid rgba(42,35,32,0.3); color:#2a2320; cursor:pointer; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:15px 24px;" style-hover="border-color:#2a2320;">Cancel</span>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ MARKETPLACE ============ -->
+  <sc-if value="{{ isMarket }}" hint-placeholder-val="{{ true }}">
+    <div>
+      <section style="padding:64px 5vw 40px; max-width:1280px; margin:0 auto;">
+        <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:18px;">The Marketplace</div>
+        <h1 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(36px,5vw,60px); line-height:1.06; margin:0 0 18px; max-width:820px;">Find the vendors who make South Asian celebrations <em style="font-style:italic; color:#7a2b2e;">unforgettable.</em></h1>
+        <p style="font-size:16px; line-height:1.7; color:#4a3f38; max-width:600px; margin:0;">Browse trusted photographers, venues, makeup artists, decorators and more — near you or back home in India — view their work, and request a booking in one place.</p>
+      </section>
+
+      <!-- filters -->
+      <section style="padding:8px 5vw 0; max-width:1280px; margin:0 auto; position:sticky; top:73px; z-index:40; background:#f7f1e7;">
+        <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; padding:18px 0; border-top:1px solid rgba(42,35,32,0.12); border-bottom:1px solid rgba(42,35,32,0.12);">
+          <input value="{{ q }}" onInput="{{ onSearch }}" placeholder="Search vendors…" style="flex:1; min-width:200px; padding:12px 16px; background:#fff; border:1px solid rgba(42,35,32,0.2); font-size:14px; color:#2a2320;">
+          <select value="{{ city }}" onChange="{{ onCity }}" style="padding:12px 16px; background:#fff; border:1px solid rgba(42,35,32,0.2); font-size:14px; color:#2a2320;">
+            <sc-for list="{{ cityOptions }}" as="c" hint-placeholder-count="5"><option value="{{ c }}">{{ c }}</option></sc-for>
+          </select>
+          <select value="{{ sort }}" onChange="{{ onSort }}" style="padding:12px 16px; background:#fff; border:1px solid rgba(42,35,32,0.2); font-size:14px; color:#2a2320;">
+            <option value="featured">Featured</option>
+            <option value="rating">Top Rated</option>
+            <option value="reviews">Most Reviewed</option>
+          </select>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; padding:16px 0;">
+          <sc-for list="{{ catChips }}" as="chip" hint-placeholder-count="7">
+            <span onClick="{{ chip.onClick }}" style="cursor:pointer; font-size:12px; letter-spacing:0.05em; text-transform:uppercase; padding:8px 16px; border:1px solid {{ chip.border }}; background:{{ chip.bg }}; color:{{ chip.color }};">{{ chip.label }}</span>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- grid -->
+      <section style="padding:24px 5vw 90px; max-width:1280px; margin:0 auto;">
+        <div style="font-size:13px; color:#8a7b6e; margin-bottom:24px;">{{ resultCount }}</div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:26px;">
+          <sc-for list="{{ filteredVendors }}" as="v" hint-placeholder-count="6">
+            <div onClick="{{ v.onOpen }}" style="cursor:pointer; background:#fff; border:1px solid rgba(42,35,32,0.1);" style-hover="border-color:rgba(122,43,46,0.4);">
+              <div style="height:190px; background:{{ v.color }}; display:flex; align-items:center; justify-content:center; position:relative; background-image:{{ v.coverImg }}; background-size:cover; background-position:center;">
+                <span style="font-family:'Cormorant Garamond',serif; font-size:60px; color:rgba(247,241,231,0.9);">{{ v.mono }}</span>
+                <span style="position:absolute; top:14px; left:14px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; background:rgba(247,241,231,0.92); color:#2a2320; padding:5px 11px;">{{ v.category }}</span>
+              </div>
+              <div style="padding:22px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; gap:10px;">
+                  <h3 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:23px; margin:0;">{{ v.name }}</h3>
+                  <span style="font-size:13px; color:#c99a4a; white-space:nowrap;">★ {{ v.rating }}</span>
+                </div>
+                <div style="font-size:13px; color:#8a7b6e; margin:6px 0 12px;">{{ v.city }} · {{ v.priceRange }}</div>
+                <p style="font-size:14px; line-height:1.6; color:#4a3f38; margin:0;">{{ v.tagline }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center; padding:70px 0; color:#8a7b6e; font-size:15px;">No vendors match your filters. <span onClick="{{ clearFilters }}" style="color:#7a2b2e; cursor:pointer; text-decoration:underline;">Clear filters</span></div>
+        </sc-if>
+      </section>
+    </div>
+  </sc-if>
+
+  <!-- ============ VENDOR PROFILE ============ -->
+  <sc-if value="{{ isVendorPage }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1180px; margin:0 auto; padding:36px 5vw 90px;">
+      <span onClick="{{ goMarket }}" style="cursor:pointer; font-size:13px; color:#7a2b2e; letter-spacing:0.04em;" style-hover="color:#5f2022;">← Back to marketplace</span>
+      <div style="height:280px; background:{{ av.color }}; margin:24px 0 0; display:flex; align-items:center; justify-content:center; background-image:{{ av.coverImg }}; background-size:cover; background-position:center;">
+        <span style="font-family:'Cormorant Garamond',serif; font-size:110px; color:rgba(247,241,231,0.9);">{{ av.mono }}</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1.6fr 1fr; gap:56px; margin-top:40px;">
+        <div>
+          <div style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#7a2b2e; margin-bottom:12px;">{{ av.category }} · {{ av.city }}</div>
+          <h1 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(34px,4.4vw,52px); margin:0 0 14px;">{{ av.name }}</h1>
+          <div style="font-size:15px; color:#c99a4a; margin-bottom:26px;">★ {{ av.rating }} <span style="color:#8a7b6e;">({{ av.reviewCount }} reviews) · {{ av.priceRange }}</span></div>
+          <p style="font-size:16px; line-height:1.85; color:#3a322c; margin:0 0 40px; max-width:560px;">{{ av.about }}</p>
+
+          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:26px; margin:0 0 20px;">Selected Work</h3>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:44px;">
+            <sc-for list="{{ av.portfolio }}" as="p" hint-placeholder-count="4">
+              <div style="aspect-ratio:1; background:{{ p }};"></div>
+            </sc-for>
+          </div>
+
+          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:26px; margin:0 0 20px;">Reviews</h3>
+          <div style="display:flex; flex-direction:column; gap:20px;">
+            <sc-for list="{{ av.reviews }}" as="r" hint-placeholder-count="3">
+              <div style="border-left:2px solid #c99a4a; padding:2px 0 2px 18px;">
+                <div style="font-size:13px; color:#c99a4a; margin-bottom:6px;">★ {{ r.rating }}</div>
+                <p style="font-size:15px; line-height:1.65; color:#3a322c; font-style:italic; margin:0 0 8px;">"{{ r.text }}"</p>
+                <div style="font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:#8a7b6e;">— {{ r.author }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div>
+          <div style="position:sticky; top:100px; background:#fff; border:1px solid rgba(42,35,32,0.12); padding:30px;">
+            <h4 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:22px; margin:0 0 18px;">Services</h4>
+            <div style="display:flex; flex-direction:column; gap:0; margin-bottom:26px;">
+              <sc-for list="{{ av.services }}" as="s" hint-placeholder-count="4">
+                <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid rgba(42,35,32,0.1); font-size:14px;">
+                  <span style="color:#2a2320;">{{ s.name }}</span>
+                  <span style="color:#7a2b2e;">{{ s.price }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <span onClick="{{ openBooking }}" style="display:block; text-align:center; background:#7a2b2e; color:#f7f1e7; cursor:pointer; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:15px; margin-bottom:12px;" style-hover="background:#5f2022;">Request Booking</span>
+            <span onClick="{{ messageVendor }}" style="display:block; text-align:center; border:1px solid rgba(42,35,32,0.3); color:#2a2320; cursor:pointer; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:15px;" style-hover="border-color:#2a2320;">Message</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ AUTH ============ -->
+  <sc-if value="{{ isAuth }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex; justify-content:center; padding:70px 5vw 110px;">
+      <div style="width:100%; max-width:440px;">
+        <div style="text-align:center; margin-bottom:34px;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:500; margin-bottom:8px;">Loom</div>
+          <div style="font-size:14px; color:#8a7b6e;">{{ authSubtitle }}</div>
+        </div>
+        <div style="background:#fff; border:1px solid rgba(42,35,32,0.12); padding:38px;">
+          <div style="display:flex; margin-bottom:26px; border:1px solid rgba(42,35,32,0.15);">
+            <span onClick="{{ setLogin }}" style="flex:1; text-align:center; cursor:pointer; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; padding:12px; background:{{ loginTabBg }}; color:{{ loginTabColor }};">Log In</span>
+            <span onClick="{{ setSignup }}" style="flex:1; text-align:center; cursor:pointer; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; padding:12px; background:{{ signupTabBg }}; color:{{ signupTabColor }};">Sign Up</span>
+          </div>
+
+          <label style="display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6b5e54; margin-bottom:10px;">I am a…</label>
+          <div style="display:flex; gap:10px; margin-bottom:22px;">
+            <span onClick="{{ setRoleClient }}" style="flex:1; text-align:center; cursor:pointer; font-size:13px; padding:12px; border:1px solid {{ clientRoleBorder }}; background:{{ clientRoleBg }}; color:{{ clientRoleColor }};">Client</span>
+            <span onClick="{{ setRoleVendor }}" style="flex:1; text-align:center; cursor:pointer; font-size:13px; padding:12px; border:1px solid {{ vendorRoleBorder }}; background:{{ vendorRoleBg }}; color:{{ vendorRoleColor }};">Vendor</span>
+          </div>
+
+          <sc-if value="{{ isSignup }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <input value="{{ afName }}" onInput="{{ onAfName }}" placeholder="{{ namePlaceholder }}" style="width:100%; padding:13px 15px; margin-bottom:14px; background:#faf6ef; border:1px solid rgba(42,35,32,0.2); font-size:14px; color:#2a2320;">
+            </div>
+          </sc-if>
+          <input value="{{ afEmail }}" onInput="{{ onAfEmail }}" placeholder="Email address" style="width:100%; padding:13px 15px; margin-bottom:14px; background:#faf6ef; border:1px solid rgba(42,35,32,0.2); font-size:14px; color:#2a2320;">
+          <input type="password" value="{{ afPass }}" onInput="{{ onAfPass }}" placeholder="Password" style="width:100%; padding:13px 15px; margin-bottom:22px; background:#faf6ef; border:1px solid rgba(42,35,32,0.2); font-size:14px; color:#2a2320;">
+          <span onClick="{{ submitAuth }}" style="display:block; text-align:center; background:#7a2b2e; color:#f7f1e7; cursor:pointer; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:15px;" style-hover="background:#5f2022;">{{ authCta }}</span>
+          <div style="text-align:center; font-size:13px; color:#8a7b6e; margin-top:18px;">{{ authSwitchText }} <span onClick="{{ toggleAuthMode }}" style="color:#7a2b2e; cursor:pointer; text-decoration:underline;">{{ authSwitchLink }}</span></div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ CLIENT DASHBOARD ============ -->
+  <sc-if value="{{ isClient }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1200px; margin:0 auto; padding:44px 5vw 90px;">
+      <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:10px;">Client Dashboard</div>
+      <h1 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,4vw,46px); margin:0 0 30px;">Welcome back, {{ firstName }}.</h1>
+      <div style="display:grid; grid-template-columns:220px 1fr; gap:40px; align-items:start;">
+        <div style="display:flex; flex-direction:column; gap:4px; position:sticky; top:100px;">
+          <sc-for list="{{ clientTabs }}" as="t" hint-placeholder-count="3">
+            <span onClick="{{ t.onClick }}" style="cursor:pointer; font-size:14px; padding:12px 16px; border-left:2px solid {{ t.border }}; background:{{ t.bg }}; color:{{ t.color }}; letter-spacing:0.02em;">{{ t.label }}</span>
+          </sc-for>
+        </div>
+        <div>
+          <!-- EVENTS -->
+          <sc-if value="{{ ctEvents }}" hint-placeholder-val="{{ true }}">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:22px;">
+                <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:28px; margin:0;">Your Events</h2>
+              </div>
+              <div style="background:#fff; border:1px solid rgba(42,35,32,0.12); padding:24px; margin-bottom:26px;">
+                <div style="font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6b5e54; margin-bottom:14px;">Plan a new event</div>
+                <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                  <input value="{{ evName }}" onInput="{{ onEvName }}" placeholder="Event name (e.g. Autumn Wedding)" style="flex:2; min-width:200px; padding:12px 14px; background:#faf6ef; border:1px solid rgba(42,35,32,0.2); font-size:14px;">
+                  <input type="date" value="{{ evDate }}" onInput="{{ onEvDate }}" style="flex:1; min-width:150px; padding:12px 14px; background:#faf6ef; border:1px solid rgba(42,35,32,0.2); font-size:14px;">
+                  <select value="{{ evType }}" onChange="{{ onEvType }}" style="flex:1; min-width:150px; padding:12px 14px; background:#faf6ef; border:1px solid rgba(42,35,32,0.2); font-size:14px;">
+                    <sc-for list="{{ eventTypes }}" as="et" hint-placeholder-count="4"><option value="{{ et }}">{{ et }}</option></sc-for>
+                  </select>
+                  <span onClick="{{ addEvent }}" style="background:#7a2b2e; color:#f7f1e7; cursor:pointer; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; padding:12px 22px; display:flex; align-items:center;" style-hover="background:#5f2022;">Add</span>
+                </div>
+              </div>
+              <sc-if value="{{ hasEvents }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex; flex-direction:column; gap:14px;">
+                  <sc-for list="{{ myEvents }}" as="e" hint-placeholder-count="2">
+                    <div style="background:#fff; border:1px solid rgba(42,35,32,0.12); padding:22px; display:flex; justify-content:space-between; align-items:center;">
+                      <div>
+                        <h3 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:22px; margin:0 0 4px;">{{ e.name }}</h3>
+                        <div style="font-size:13px; color:#8a7b6e;">{{ e.type }} · {{ e.dateLabel }}</div>
+                      </div>
+                      <div style="text-align:right;">
+                        <div style="font-size:26px; font-family:'Cormorant Garamond',serif; color:#7a2b2e;">{{ e.bookingCount }}</div>
+                        <div style="font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#8a7b6e;">vendors booked</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ noEvents }}" hint-placeholder-val="{{ false }}">
+                <div style="text-align:center; padding:50px 0; color:#8a7b6e; font-size:15px;">No events yet — add one above to start planning.</div>
+              </sc-if>
+            </div>
+          </sc-if>
+
+          <!-- BOOKINGS -->
+          <sc-if value="{{ ctBookings }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:28px; margin:0 0 22px;">Your Bookings</h2>
+              <sc-if value="{{ hasBookings }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex; flex-direction:column; gap:14px;">
+                  <sc-for list="{{ myBookings }}" as="b" hint-placeholder-count="3">
+                    <div style="background:#fff; border:1px solid rgba(42,35,32,0.12); padding:22px; display:flex; justify-content:space-between; align-items:center; gap:16px;">
+                      <div style="display:flex; gap:16px; align-items:center;">
+                        <div style="width:52px; height:52px; background:{{ b.color }}; display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:22px; color:rgba(247,241,231,0.9); flex-shrink:0;">{{ b.mono }}</div>
+                        <div>
+                          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:20px; margin:0 0 3px;">{{ b.vendorName }}</h3>
+                          <div style="font-size:13px; color:#8a7b6e;">{{ b.service }} · {{ b.dateLabel }} at {{ b.time }}</div>
+                        </div>
+                      </div>
+                      <span style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; padding:7px 14px; background:{{ b.statusBg }}; color:{{ b.statusColor }};">{{ b.status }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ noBookings }}" hint-placeholder-val="{{ false }}">
+                <div style="text-align:center; padding:50px 0; color:#8a7b6e; font-size:15px;">No bookings yet. <span onClick="{{ goMarket }}" style="color:#7a2b2e; cursor:pointer; text-decoration:underline;">Browse the marketplace</span></div>
+              </sc-if>
+            </div>
+          </sc-if>
+
+          <!-- MESSAGES -->
+          <sc-if value="{{ ctMessages }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:28px; margin:0 0 22px;">Messages</h2>
+              <sc-if value="{{ hasThreads }}" hint-placeholder-val="{{ false }}">
+                <div style="display:grid; grid-template-columns:260px 1fr; gap:0; border:1px solid rgba(42,35,32,0.12); background:#fff; height:520px;">
+                  <div style="border-right:1px solid rgba(42,35,32,0.12); overflow-y:auto;">
+                    <sc-for list="{{ threadList }}" as="th" hint-placeholder-count="3">
+                      <div onClick="{{ th.onClick }}" style="cursor:pointer; padding:16px 18px; border-bottom:1px solid rgba(42,35,32,0.08); background:{{ th.bg }}; display:flex; gap:12px; align-items:center;">
+                        <div style="width:40px; height:40px; background:{{ th.color }}; display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:17px; color:rgba(247,241,231,0.9); flex-shrink:0;">{{ th.mono }}</div>
+                        <div style="min-width:0;">
+                          <div style="font-size:14px; font-weight:500; color:#2a2320; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ th.name }}</div>
+                          <div style="font-size:12px; color:#8a7b6e; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ th.preview }}</div>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div style="display:flex; flex-direction:column;">
+                    <div style="padding:16px 22px; border-bottom:1px solid rgba(42,35,32,0.12); font-family:'Cormorant Garamond',serif; font-size:20px;">{{ activeThreadName }}</div>
+                    <div style="padding:9px 22px; background:#efe3d0; font-size:12px; color:#6b5e54; display:flex; gap:7px; align-items:center;"><span>🛡</span><span>Phone numbers &amp; emails stay hidden until a booking is confirmed, so you're covered by Loom Protection.</span></div>
+                    <div style="flex:1; overflow-y:auto; padding:22px; display:flex; flex-direction:column; gap:12px;">
+                      <sc-for list="{{ activeMessages }}" as="m" hint-placeholder-count="3">
+                        <div style="align-self:{{ m.align }}; max-width:72%; background:{{ m.bg }}; color:{{ m.color }}; padding:11px 16px; font-size:14px; line-height:1.5;">{{ m.text }}</div>
+                      </sc-for>
+                    </div>
+                    <div style="padding:16px; border-top:1px solid rgba(42,35,32,0.12); display:flex; gap:10px;">
+                      <input value="{{ msgInput }}" onInput="{{ onMsgInput }}" onKeyDown="{{ onMsgKey }}" placeholder="Write a message…" style="flex:1; padding:12px 15px; background:#faf6ef; border:1px solid rgba(42,35,32,0.2); font-size:14px;">
+                      <span onClick="{{ sendMessage }}" style="background:#7a2b2e; color:#f7f1e7; cursor:pointer; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; padding:12px 20px; display:flex; align-items:center;" style-hover="background:#5f2022;">Send</span>
+                    </div>
+                  </div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ noThreads }}" hint-placeholder-val="{{ false }}">
+                <div style="text-align:center; padding:50px 0; color:#8a7b6e; font-size:15px;">No conversations yet. Message a vendor from their profile to start one.</div>
+              </sc-if>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ VENDOR DASHBOARD ============ -->
+  <sc-if value="{{ isVendorDash }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1200px; margin:0 auto; padding:44px 5vw 90px;">
+      <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:10px;">Vendor Dashboard</div>
+      <h1 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,4vw,46px); margin:0 0 30px;">{{ vendorBizName }}</h1>
+      <div style="display:grid; grid-template-columns:220px 1fr; gap:40px; align-items:start;">
+        <div style="display:flex; flex-direction:column; gap:4px; position:sticky; top:100px;">
+          <sc-for list="{{ vendorTabs }}" as="t" hint-placeholder-count="2">
+            <span onClick="{{ t.onClick }}" style="cursor:pointer; font-size:14px; padding:12px 16px; border-left:2px solid {{ t.border }}; background:{{ t.bg }}; color:{{ t.color }};">{{ t.label }}</span>
+          </sc-for>
+        </div>
+        <div>
+          <!-- INCOMING BOOKINGS -->
+          <sc-if value="{{ vtBookings }}" hint-placeholder-val="{{ true }}">
+            <div>
+              <div style="display:flex; gap:16px; margin-bottom:26px;">
+                <div style="flex:1; background:#fff; border:1px solid rgba(42,35,32,0.12); padding:20px;">
+                  <div style="font-size:34px; font-family:'Cormorant Garamond',serif; color:#7a2b2e;">{{ pendingCount }}</div>
+                  <div style="font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:#8a7b6e;">Pending requests</div>
+                </div>
+                <div style="flex:1; background:#fff; border:1px solid rgba(42,35,32,0.12); padding:20px;">
+                  <div style="font-size:34px; font-family:'Cormorant Garamond',serif; color:#5f6b52;">{{ confirmedCount }}</div>
+                  <div style="font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:#8a7b6e;">Confirmed</div>
+                </div>
+              </div>
+              <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:26px; margin:0 0 20px;">Booking Requests</h2>
+              <sc-if value="{{ hasIncoming }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex; flex-direction:column; gap:14px;">
+                  <sc-for list="{{ incoming }}" as="b" hint-placeholder-count="2">
+                    <div style="background:#fff; border:1px solid rgba(42,35,32,0.12); padding:22px;">
+                      <div style="display:flex; justify-content:space-between; align-items:start; gap:16px; margin-bottom:12px;">
+                        <div>
+                          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:20px; margin:0 0 3px;">{{ b.clientName }}</h3>
+                          <div style="font-size:13px; color:#8a7b6e;">{{ b.service }} · {{ b.dateLabel }} at {{ b.time }}</div>
+                        </div>
+                        <span style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; padding:7px 14px; background:{{ b.statusBg }}; color:{{ b.statusColor }};">{{ b.status }}</span>
+                      </div>
+                      <sc-if value="{{ b.hasNotes }}" hint-placeholder-val="{{ false }}">
+                        <p style="font-size:14px; color:#4a3f38; line-height:1.6; margin:0 0 14px; font-style:italic;">"{{ b.notes }}"</p>
+                      </sc-if>
+                      <sc-if value="{{ b.isPending }}" hint-placeholder-val="{{ true }}">
+                        <div style="display:flex; gap:12px;">
+                          <span onClick="{{ b.onAccept }}" style="background:#5f6b52; color:#f7f1e7; cursor:pointer; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 22px;" style-hover="background:#4c5642;">Accept</span>
+                          <span onClick="{{ b.onDecline }}" style="border:1px solid rgba(42,35,32,0.3); color:#2a2320; cursor:pointer; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; padding:10px 22px;" style-hover="border-color:#7a2b2e; color:#7a2b2e;">Decline</span>
+                        </div>
+                      </sc-if>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ noIncoming }}" hint-placeholder-val="{{ false }}">
+                <div style="text-align:center; padding:50px 0; color:#8a7b6e; font-size:15px;">No booking requests yet. They'll appear here when clients reach out.</div>
+              </sc-if>
+            </div>
+          </sc-if>
+
+          <!-- PROFILE EDIT -->
+          <sc-if value="{{ vtProfile }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:26px; margin:0 0 20px;">Edit Your Profile</h2>
+              <div style="background:#fff; border:1px solid rgba(42,35,32,0.12); padding:30px; max-width:620px;">
+                <label style="display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6b5e54; margin-bottom:8px;">Business name</label>
+                <input value="{{ pfName }}" onInput="{{ onPfName }}" style="width:100%; padding:12px 14px; margin-bottom:18px; background:#faf6ef; border:1px solid rgba(42,35,32,0.2); font-size:14px;">
+                <div style="display:flex; gap:14px;">
+                  <div style="flex:1;">
+                    <label style="display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6b5e54; margin-bottom:8px;">Category</label>
+                    <select value="{{ pfCategory }}" onChange="{{ onPfCategory }}" style="width:100%; padding:12px 14px; margin-bottom:18px; background:#faf6ef; border:1px solid rgba(42,35,32,0.2); font-size:14px;">
+                      <sc-for list="{{ categoryOptions }}" as="c" hint-placeholder-count="6"><option value="{{ c }}">{{ c }}</option></sc-for>
+                    </select>
+                  </div>
+                  <div style="flex:1;">
+                    <label style="display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6b5e54; margin-bottom:8px;">City</label>
+                    <select value="{{ pfCity }}" onChange="{{ onPfCity }}" style="width:100%; padding:12px 14px; margin-bottom:18px; background:#faf6ef; border:1px solid rgba(42,35,32,0.2); font-size:14px;">
+                      <sc-for list="{{ cityEditOptions }}" as="c" hint-placeholder-count="5"><option value="{{ c }}">{{ c }}</option></sc-for>
+                    </select>
+                  </div>
+                  <div style="width:130px;">
+                    <label style="display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6b5e54; margin-bottom:8px;">Price</label>
+                    <select value="{{ pfPrice }}" onChange="{{ onPfPrice }}" style="width:100%; padding:12px 14px; margin-bottom:18px; background:#faf6ef; border:1px solid rgba(42,35,32,0.2); font-size:14px;">
+                      <option value="$$">$$</option>
+                      <option value="$$$">$$$</option>
+                      <option value="$$$$">$$$$</option>
+                    </select>
+                  </div>
+                </div>
+                <label style="display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6b5e54; margin-bottom:8px;">Tagline</label>
+                <input value="{{ pfTagline }}" onInput="{{ onPfTagline }}" style="width:100%; padding:12px 14px; margin-bottom:18px; background:#faf6ef; border:1px solid rgba(42,35,32,0.2); font-size:14px;">
+                <label style="display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6b5e54; margin-bottom:8px;">About</label>
+                <textarea value="{{ pfAbout }}" onInput="{{ onPfAbout }}" rows="5" style="width:100%; padding:12px 14px; margin-bottom:24px; background:#faf6ef; border:1px solid rgba(42,35,32,0.2); font-size:14px; resize:vertical;"></textarea>
+                <div style="display:flex; gap:14px; align-items:center;">
+                  <span onClick="{{ saveProfile }}" style="background:#7a2b2e; color:#f7f1e7; cursor:pointer; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; padding:14px 30px;" style-hover="background:#5f2022;">Save Changes</span>
+                  <span onClick="{{ viewMyProfile }}" style="cursor:pointer; font-size:13px; color:#7a2b2e; text-decoration:underline;">Preview public profile →</span>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="padding:44px 5vw; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; border-top:1px solid rgba(42,35,32,0.12); font-size:13px; color:#6b5e54;">
+    <img src="assets/loom-logo-full.png" alt="Loom — weaving connections for unforgettable events" style="width:120px; height:auto;">
+    <div>A working prototype · data saved in your browser</div>
+    <div style="font-family:'Cormorant Garamond',serif; font-style:italic; letter-spacing:0.08em;">© 2026 · theloomplatform.com</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.KEY = 'loom_app_v2';
+    this.CITIES = ['Toronto','London','New Jersey','Vancouver','Dubai','Jaipur'];
+    this.CATS = ['Venues','Photography','Makeup & Hair','Decor','Wedding Planner','Mehndi','Bridal Wear','Catering','Jewellery','DJ & Entertainment','Priest','Gifting'];
+    this.CATCOLOR = { 'Venues':'#7a2b2e','Photography':'#4a3f38','Makeup & Hair':'#a34b3f','Decor':'#5f6b52','Wedding Planner':'#c99a4a','Mehndi':'#8a5a2b','Bridal Wear':'#7a2b2e','Catering':'#a0522d','Jewellery':'#c99a4a','DJ & Entertainment':'#2a2320','Priest':'#5f6b52','Gifting':'#a34b3f' };
+    this.state = {
+      view:'market', activeVendorId:null,
+      user:null, db:this.seed(),
+      q:'', city:'All', sort:'featured', cat:'All',
+      authMode:'login', authRole:'client', afName:'', afEmail:'', afPass:'', pendingAction:null,
+      clientTab:'events', vendorTab:'bookings', activeThread:null,
+      bookingVendorId:null, bkService:'', bkDate:'', bkTime:'', bkNotes:'',
+      msgInput:'',
+      evName:'', evDate:'', evType:'Wedding',
+      pf:{}, toast:null,
+    };
+  }
+  componentDidMount() {
+    try {
+      const raw = localStorage.getItem(this.KEY);
+      if (raw) {
+        const saved = JSON.parse(raw);
+        this.setState({ db: saved.db || this.state.db, user: saved.user || null });
+      }
+    } catch(e) {}
+  }
+  persist(db, user) {
+    const nextDb = db || this.state.db;
+    const nextUser = user === undefined ? this.state.user : user;
+    try { localStorage.setItem(this.KEY, JSON.stringify({ db: nextDb, user: nextUser })); } catch(e) {}
+  }
+  toast(msg) {
+    this.setState({ toast: msg });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ toast: null }), 2600);
+  }
+  uid() { return Math.random().toString(36).slice(2,9); }
+  monoOf(name) { return name.split(/\s+/).filter(w=>/[A-Za-z]/.test(w)).slice(0,2).map(w=>w[0].toUpperCase()).join(''); }
+  seed() {
+    const cc = { 'Venues':'#7a2b2e','Photography':'#4a3f38','Makeup & Hair':'#a34b3f','Decor':'#5f6b52','Wedding Planner':'#c99a4a','Mehndi':'#8a5a2b','Bridal Wear':'#7a2b2e','Catering':'#a0522d','Jewellery':'#c99a4a','DJ & Entertainment':'#2a2320','Priest':'#5f6b52','Gifting':'#a34b3f' };
+    const sw = (a,b,c,d)=>[a,b,c,d];
+    const mk = (name,category,city,priceRange,rating,reviewCount,tagline,about,services,portfolio,reviews)=>({id:this.uid?this.uid():Math.random().toString(36).slice(2,9),name,category,city,priceRange,rating,reviewCount,tagline,about,services,portfolio,reviews,color:cc[category],mono:name.split(/\s+/).slice(0,2).map(w=>w[0].toUpperCase()).join('')});
+    return {
+      vendors: [
+        mk('Sanya Kapoor Studios','Photography','Toronto','$$$',4.9,214,'Timeless documentary photography & film for South Asian weddings.','Sanya Kapoor Studios is a Toronto-based team documenting diaspora weddings across North America and beyond. We shoot in a warm, candid, film-inspired style — chasing the real moments between the rituals.',[{name:'Half-day coverage',price:'from $1,800'},{name:'Full-day photo + film',price:'from $4,200'},{name:'Multi-day wedding',price:'from $8,500'},{name:'Engagement / roka shoot',price:'from $650'}],sw('#4a3f38','#7a2b2e','#c99a4a','#8a7b6e'),[{author:'Aisha R.',rating:5,text:'They captured our nikah and reception beautifully — the film still makes us cry.'},{author:'Rahul & Neha',rating:5,text:'Flew to Udaipur with us and never missed a moment. Incredible team.'}]),
+        mk('Mehak Beauty Atelier','Makeup & Hair','London','$$$$',5.0,168,'Bridal makeup & hair that lasts from baraat to bidaai.','Mehak is a London bridal artist specialising in South Asian skin tones and long celebration days. HD and airbrush artistry, dupatta setting, and trials that get it right before the day.',[{name:'Bridal trial',price:'from £150'},{name:'Wedding day makeup & hair',price:'from £600'},{name:'Party / guest makeup',price:'from £120'},{name:'Full bridal party',price:'custom'}],sw('#a34b3f','#c99a4a','#7a2b2e','#efe3d0'),[{author:'Simran K.',rating:5,text:'12 hours, three outfit changes, and my makeup did not budge. Magic.'},{author:'Diya P.',rating:5,text:'She understood exactly the look I wanted for both mehndi and reception.'}]),
+        mk('Rani Mahal Venues','Venues','Jaipur','$$$$',4.8,96,'Palace and heritage venues for unforgettable destination weddings.','Rani Mahal represents a curated collection of heritage palaces, forts and resort venues across Rajasthan — with on-ground coordination for couples planning from abroad.',[{name:'Venue booking',price:'from ₹4,000/plate'},{name:'Weekend takeover',price:'custom'},{name:'Room-block coordination',price:'included'}],sw('#7a2b2e','#c99a4a','#a34b3f','#5f6b52'),[{author:'Meera S.',rating:5,text:'A real palace, and the team handled everything while we were in London.'},{author:'Anita D.',rating:4,text:'Stunning setting. Communication across time zones was smooth.'}]),
+        mk('Gainda Decor Studio','Decor','New Jersey','$$$',4.9,131,'Marigold-forward mandaps, stages and tablescapes.','Gainda designs immersive wedding décor for East Coast celebrations — mandaps, sangeet stages, floral installations and tablescapes rooted in tradition with a modern hand.',[{name:'Mandap design',price:'from $3,500'},{name:'Sangeet stage',price:'from $2,800'},{name:'Full décor package',price:'from $9,000'}],sw('#5f6b52','#c99a4a','#7a2b2e','#a34b3f'),[{author:'Pooja & Sam',rating:5,text:'Our mandap looked like it belonged in a magazine. Guests were stunned.'}]),
+        mk('Zaika Catering Co.','Catering','New Jersey','$$',4.7,240,'Regional Indian menus, from Hyderabadi biryani to chaat counters.','Zaika caters weddings and celebrations across the tri-state area — live chaat and dosa counters, regional thalis, and menus spanning North and South India with full dietary flexibility.',[{name:'Cocktail / chaat counter',price:'from $32/guest'},{name:'Buffet dinner',price:'from $58/guest'},{name:'Full-service catering',price:'from $95/guest'}],sw('#a0522d','#c99a4a','#7a2b2e','#5f6b52'),[{author:'Karan V.',rating:5,text:'The biryani and the live dosa station were the talk of the wedding.'},{author:'Reshma T.',rating:4,text:'Handled Jain, vegan and nut-free menus without a single mix-up.'}]),
+        mk('Henna by Anjali','Mehndi','Vancouver','$$',4.9,187,'Intricate bridal mehndi for the whole wedding party.','Anjali is a Vancouver mehndi artist offering bridal and family henna — from full dulhan hands-and-feet to quick guest designs, bookable for every function.',[{name:'Bridal mehndi',price:'from $250'},{name:'Family / party (per hour)',price:'from $120/hr'},{name:'Guest station',price:'custom'}],sw('#8a5a2b','#7a2b2e','#c99a4a','#a34b3f'),[{author:'Harleen G.',rating:5,text:'My bridal mehndi was breathtaking and lasted for weeks. So dark!'}]),
+        mk('Sona Jewellers','Jewellery','Dubai','$$$$',4.8,74,'Bridal sets, polki and kundan — shipped worldwide.','Sona Jewellers offers bridal jewellery and rentals with international shipping and virtual try-ons, so diaspora brides can source authentic sets without flying home.',[{name:'Bridal set rental',price:'from AED 900'},{name:'Custom set',price:'custom'},{name:'Virtual consultation',price:'free'}],sw('#c99a4a','#e3b975','#7a2b2e','#4a3f38'),[{author:'Nisha M.',rating:5,text:'Shipped a stunning polki set to Toronto with time to spare. Flawless.'}]),
+        mk('Dhol & Bass','DJ & Entertainment','London','$$$',4.7,152,'Dhol players, DJs and full sangeet production.','Dhol & Bass brings the energy — live dhol for the baraat, DJs blending Bollywood and Western sets, plus sound and lighting for sangeet and reception.',[{name:'Dhol player (per hour)',price:'from £250'},{name:'DJ package',price:'from £900'},{name:'Full sangeet production',price:'custom'}],sw('#2a2320','#7a2b2e','#c99a4a','#a34b3f'),[{author:'Vikram S.',rating:5,text:'The baraat was unreal. Dance floor never emptied all night.'}]),
+        mk('Pandit Sharma Ji','Priest','Toronto','$$',5.0,63,'Multilingual pandit for Hindu ceremonies across North America.','Pandit Sharma Ji performs Hindu wedding and life-event ceremonies with clear explanations in English and Hindi, travelling across Canada and the US.',[{name:'Wedding ceremony',price:'from $500'},{name:'Griha pravesh / puja',price:'from $200'},{name:'Naming ceremony',price:'from $150'}],sw('#5f6b52','#c99a4a','#7a2b2e','#4a3f38'),[{author:'Ramesh & Uma',rating:5,text:'He explained every ritual so all our guests could follow along. Beautiful.'}]),
+        mk('Threads of Benares','Bridal Wear','London','$$$',4.8,119,'Bespoke lehengas and sherwanis, fitted internationally.','Threads of Benares creates bespoke bridal and groom wear sourced from weavers across India, with virtual measurements and international delivery for diaspora couples.',[{name:'Bridal lehenga',price:'from £1,200'},{name:'Groom sherwani',price:'from £700'},{name:'Family outfits',price:'custom'}],sw('#7a2b2e','#a34b3f','#c99a4a','#e3b975'),[{author:'Anjali B.',rating:5,text:'My lehenga was everything I dreamed of and fit perfectly — all done remotely.'}]),
+        mk('Vivaha Planners','Wedding Planner','Toronto','$$$$',5.0,58,'Full-service diaspora & destination wedding planning.','Vivaha takes on a handful of weddings a year — coordinating vendors, rituals and logistics across countries and time zones so families can simply celebrate.',[{name:'Partial planning',price:'from $5,000'},{name:'Full planning',price:'from $15,000'},{name:'Destination wedding',price:'custom'}],sw('#c99a4a','#7a2b2e','#5f6b52','#2a2320'),[{author:'Simran & Dev',rating:5,text:'They ran our three-day wedding across two countries flawlessly.'}]),
+        mk('Dori Gifting Co.','Gifting','New Jersey','$$',4.9,90,'Curated trousseau and return-gift hampers from across India.','Dori curates and ships gifting for every function — trousseau packing, return-gift hampers and regional artisan pieces sourced from across India.',[{name:'Return-gift hampers',price:'from $18/gift'},{name:'Trousseau packing',price:'from $400'},{name:'Custom hampers',price:'custom'}],sw('#a34b3f','#c99a4a','#7a2b2e','#5f6b52'),[{author:'Tanvi R.',rating:5,text:'Gorgeous hampers that felt personal, and they shipped everywhere for us.'}]),
+      ],
+      bookings: [], messages: {}, events: [],
+    };
+  }
+
+  // ---------- navigation ----------
+  goMarket = () => this.setState({ view:'market', activeVendorId:null });
+  goLogin = () => this.setState({ view:'auth', authMode:'login' });
+  goSignup = () => this.setState({ view:'auth', authMode:'signup' });
+  goDash = () => {
+    const u = this.state.user; if(!u) return this.goLogin();
+    this.setState({ view: u.role==='vendor'?'vendorDash':'client' });
+  };
+  openVendor = (id) => this.setState({ view:'vendor', activeVendorId:id });
+  stop = (e) => { e.stopPropagation(); };
+  logout = () => { this.persist(this.state.db, null); this.setState({ user:null, view:'market' }); this.toast('Logged out'); };
+
+  activeVendor() { return this.state.db.vendors.find(v=>v.id===this.state.activeVendorId); }
+  myVendor() { const u=this.state.user; return u && u.vendorId ? this.state.db.vendors.find(v=>v.id===u.vendorId) : null; }
+
+  // ---------- filters ----------
+  onSearch = (e)=> this.setState({ q:e.target.value });
+  onCity = (e)=> this.setState({ city:e.target.value });
+  onSort = (e)=> this.setState({ sort:e.target.value });
+  setCat = (c)=> this.setState({ cat:c });
+  clearFilters = ()=> this.setState({ q:'', city:'All', cat:'All', sort:'featured' });
+
+  // ---------- auth ----------
+  setLogin=()=>this.setState({authMode:'login'});
+  setSignup=()=>this.setState({authMode:'signup'});
+  toggleAuthMode=()=>this.setState({authMode:this.state.authMode==='login'?'signup':'login'});
+  setRoleClient=()=>this.setState({authRole:'client'});
+  setRoleVendor=()=>this.setState({authRole:'vendor'});
+  onAfName=(e)=>this.setState({afName:e.target.value});
+  onAfEmail=(e)=>this.setState({afEmail:e.target.value});
+  onAfPass=(e)=>this.setState({afPass:e.target.value});
+  submitAuth=()=>{
+    const { afEmail, afName, authRole, authMode, db } = this.state;
+    if(!afEmail.trim()){ this.toast('Enter an email to continue'); return; }
+    let user, newDb = db;
+    if(authRole==='vendor'){
+      let vendorId;
+      if(authMode==='signup'){
+        const name = afName.trim() || 'New Studio';
+        const v = { id:this.uid(), name, category:'Venues', city:'Toronto', priceRange:'$$$', rating:5.0, reviewCount:0, tagline:'A new vendor on Loom.', about:'Tell couples about your services from the Profile tab of your dashboard.', services:[{name:'Consultation',price:'free'},{name:'Starter package',price:'from $800'},{name:'Full package',price:'from $2,000'}], portfolio:['#7a2b2e','#c99a4a','#5f6b52','#4a3f38'], reviews:[], color:this.CATCOLOR['Venues'], mono:this.monoOf(name) };
+        newDb = { ...db, vendors:[v, ...db.vendors] };
+        vendorId = v.id;
+      } else {
+        vendorId = db.vendors[0].id; // demo login maps to first vendor
+      }
+      const vname = newDb.vendors.find(v=>v.id===vendorId).name;
+      user = { id:this.uid(), name: afName.trim()||vname, email:afEmail.trim(), role:'vendor', vendorId };
+    } else {
+      user = { id:this.uid(), name: afName.trim()|| (afEmail.split('@')[0]) , email:afEmail.trim(), role:'client' };
+    }
+    this.persist(newDb, user);
+    const pa = this.state.pendingAction;
+    const dest = pa ? 'vendor' : (user.role==='vendor'?'vendorDash':'client');
+    this.setState({ db:newDb, user, afPass:'', pendingAction:null, view:dest }, () => {
+      if(pa==='booking') this.openBooking();
+      else if(pa==='message') this._doMessage();
+    });
+    this.toast(authMode==='signup'?'Welcome to Loom':'Welcome back');
+  };
+
+  // ---------- booking ----------
+  openBooking=()=>{
+    if(!this.state.user){ this.setState({ pendingAction:'booking' }); return this.goLogin(); }
+    const v=this.activeVendor(); if(!v) return;
+    this.setState({ bookingVendorId:v.id, bkService:v.services[0].name, bkDate:'', bkTime:'', bkNotes:'' });
+  };
+  closeBooking=()=>this.setState({bookingVendorId:null});
+  onBkService=(e)=>this.setState({bkService:e.target.value});
+  onBkDate=(e)=>this.setState({bkDate:e.target.value});
+  onBkTime=(e)=>this.setState({bkTime:e.target.value});
+  onBkNotes=(e)=>this.setState({bkNotes:e.target.value});
+  submitBooking=()=>{
+    const { bookingVendorId, bkService, bkDate, bkTime, bkNotes, db, user } = this.state;
+    if(!bkDate){ this.toast('Pick a date for your booking'); return; }
+    const v = db.vendors.find(x=>x.id===bookingVendorId);
+    const b = { id:this.uid(), clientId:user.id, clientName:user.name, vendorId:v.id, vendorName:v.name, service:bkService, date:bkDate, time:bkTime||'—', notes:bkNotes, status:'Pending' };
+    const newDb = { ...db, bookings:[b, ...db.bookings] };
+    this.persist(newDb);
+    this.setState({ db:newDb, bookingVendorId:null });
+    this.toast('Booking request sent to '+v.name);
+  };
+
+  // ---------- messaging ----------
+  threadId(vendorId){ return this.state.user.id+'__'+vendorId; }
+  messageVendor=()=>{
+    if(!this.state.user){ this.setState({ pendingAction:'message' }); return this.goLogin(); }
+    this._doMessage();
+  };
+  _doMessage=()=>{
+    const v=this.activeVendor(); if(!v) return;
+    const tid=this.threadId(v.id);
+    const db=this.state.db;
+    if(!db.messages[tid]){
+      const newDb={...db, messages:{...db.messages, [tid]:[{from:'vendor', text:`Hi! Thanks for reaching out to ${v.name}. How can we help with your event?`, ts:Date.now()}]}};
+      this.persist(newDb);
+      this.setState({ db:newDb });
+    }
+    this.setState({ view:'client', clientTab:'messages', activeThread:tid });
+  };
+  onMsgInput=(e)=>this.setState({msgInput:e.target.value});
+  onMsgKey=(e)=>{ if(e.key==='Enter'){ this.sendMessage(); } };
+  sendMessage=()=>{
+    const { msgInput, activeThread, db } = this.state;
+    if(!msgInput.trim()||!activeThread) return;
+    const emailRe=/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/gi;
+    const phoneRe=/(\+?\d[\d\s().-]{7,}\d)/g;
+    let text=msgInput.trim(), masked=false;
+    if(emailRe.test(text)||phoneRe.test(text)){ masked=true; text=text.replace(emailRe,'[contact hidden]').replace(phoneRe,'[contact hidden]'); }
+    if(masked) this.toast('Contact details are hidden until your booking is confirmed — keeps you covered by Loom Protection.');
+    const arr=[...(db.messages[activeThread]||[]), {from:'client', text, ts:Date.now()}];
+    const newDb={...db, messages:{...db.messages, [activeThread]:arr}};
+    this.persist(newDb);
+    this.setState({ db:newDb, msgInput:'' });
+    setTimeout(()=>{
+      const d2=this.state.db;
+      const cur=d2.messages[activeThread]||[];
+      const replies=['Absolutely — we have availability, let me check the calendar.','That sounds lovely. Could you share your guest count?','We would love to be part of it! Sending a few ideas over.','Wonderful. I will put together a quick proposal for you.'];
+      const arr2=[...cur, {from:'vendor', text:replies[Math.floor(Math.random()*replies.length)], ts:Date.now()}];
+      const nd={...d2, messages:{...d2.messages, [activeThread]:arr2}};
+      this.persist(nd); this.setState({ db:nd });
+    }, 900);
+  };
+  setThread=(id)=>this.setState({activeThread:id});
+
+  // ---------- client events ----------
+  onEvName=(e)=>this.setState({evName:e.target.value});
+  onEvDate=(e)=>this.setState({evDate:e.target.value});
+  onEvType=(e)=>this.setState({evType:e.target.value});
+  addEvent=()=>{
+    const { evName, evDate, evType, db, user } = this.state;
+    if(!evName.trim()){ this.toast('Give your event a name'); return; }
+    const ev={ id:this.uid(), clientId:user.id, name:evName.trim(), date:evDate, type:evType };
+    const newDb={...db, events:[ev, ...db.events]};
+    this.persist(newDb);
+    this.setState({ db:newDb, evName:'', evDate:'' });
+    this.toast('Event added');
+  };
+
+  // ---------- dashboards ----------
+  setClientTab=(t)=>this.setState({clientTab:t});
+  setVendorTab=(t)=>{ if(t==='profile'){ this.loadProfileDraft(); } this.setState({vendorTab:t}); };
+  acceptBooking=(id)=>this._setBooking(id,'Confirmed','Booking confirmed');
+  declineBooking=(id)=>this._setBooking(id,'Declined','Booking declined');
+  _setBooking=(id,status,msg)=>{
+    const db=this.state.db;
+    const newDb={...db, bookings:db.bookings.map(b=>b.id===id?{...b,status}:b)};
+    this.persist(newDb); this.setState({db:newDb}); this.toast(msg);
+  };
+
+  // ---------- profile edit ----------
+  loadProfileDraft=()=>{
+    const v=this.myVendor(); if(!v) return;
+    this.setState({ pf:{ name:v.name, category:v.category, city:v.city, priceRange:v.priceRange, tagline:v.tagline, about:v.about } });
+  };
+  _pf=(k,val)=>this.setState({pf:{...this.state.pf,[k]:val}});
+  onPfName=(e)=>this._pf('name',e.target.value);
+  onPfCategory=(e)=>this._pf('category',e.target.value);
+  onPfCity=(e)=>this._pf('city',e.target.value);
+  onPfPrice=(e)=>this._pf('priceRange',e.target.value);
+  onPfTagline=(e)=>this._pf('tagline',e.target.value);
+  onPfAbout=(e)=>this._pf('about',e.target.value);
+  saveProfile=()=>{
+    const { pf, db, user } = this.state;
+    const newDb={...db, vendors:db.vendors.map(v=>v.id===user.vendorId?{...v, ...pf, color:this.CATCOLOR[pf.category]||v.color, mono:this.monoOf(pf.name||v.name)}:v)};
+    this.persist(newDb); this.setState({db:newDb}); this.toast('Profile saved');
+  };
+  viewMyProfile=()=>{ const u=this.state.user; if(u&&u.vendorId) this.setState({view:'vendor', activeVendorId:u.vendorId}); };
+
+  // ---------- derived ----------
+  filtered() {
+    const { db,q,city,cat,sort } = this.state;
+    let list = db.vendors.filter(v=>{
+      if(cat!=='All' && v.category!==cat) return false;
+      if(city!=='All' && v.city!==city) return false;
+      if(q.trim()){ const s=(v.name+' '+v.category+' '+v.tagline+' '+v.city).toLowerCase(); if(!s.includes(q.toLowerCase())) return false; }
+      return true;
+    });
+    if(sort==='rating') list=[...list].sort((a,b)=>b.rating-a.rating);
+    else if(sort==='reviews') list=[...list].sort((a,b)=>b.reviewCount-a.reviewCount);
+    return list;
+  }
+  fmtDate(d){ if(!d) return 'date TBD'; const dt=new Date(d+'T00:00'); if(isNaN(dt)) return d; return dt.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}); }
+  statusStyle(s){
+    if(s==='Confirmed') return {bg:'#e4ead9', color:'#4c5642'};
+    if(s==='Declined') return {bg:'#f0dcdc', color:'#7a2b2e'};
+    return {bg:'#f4ead3', color:'#8a6d2e'};
+  }
+
+  renderVals() {
+    const s=this.state, u=s.user;
+    const loggedIn=!!u;
+    const av=this.activeVendor();
+    const filtered=this.filtered();
+
+    // category chips
+    const chipDef=(label,val)=>{
+      const active=s.cat===val;
+      return { label, onClick:()=>this.setCat(val), bg:active?'#7a2b2e':'transparent', color:active?'#f7f1e7':'#2a2320', border:active?'#7a2b2e':'rgba(42,35,32,0.25)' };
+    };
+    const catChips=[chipDef('All','All'), ...this.CATS.map(c=>chipDef(c,c))];
+
+    // vendor cards
+    const VIMG={'Zaika Catering Co.':'assets/vendor-zaika.jpg'};
+    const coverOf=(v)=>v&&VIMG[v.name]?`url('${VIMG[v.name]}')`:'none';
+    const filteredVendors=filtered.map(v=>({ ...v, onOpen:()=>this.openVendor(v.id), coverImg:coverOf(v), mono: VIMG[v.name]?'':v.mono }));
+
+    // auth derived
+    const isSignup=s.authMode==='signup';
+    const tabActive={bg:'#7a2b2e',color:'#f7f1e7'}, tabIdle={bg:'transparent',color:'#8a7b6e'};
+    const roleActive={bg:'#2a2320',color:'#f7f1e7',border:'#2a2320'}, roleIdle={bg:'#faf6ef',color:'#4a3f38',border:'rgba(42,35,32,0.2)'};
+
+    // client dashboard data
+    let myBookings=[], myEvents=[], threadList=[], activeMessages=[], activeThreadName='';
+    if(u && u.role==='client'){
+      myBookings=s.db.bookings.filter(b=>b.clientId===u.id).map(b=>{
+        const v=s.db.vendors.find(x=>x.id===b.vendorId)||{};
+        const st=this.statusStyle(b.status);
+        return {...b, dateLabel:this.fmtDate(b.date), color:v.color||'#7a2b2e', mono:v.mono||'', statusBg:st.bg, statusColor:st.color};
+      });
+      myEvents=s.db.events.filter(e=>e.clientId===u.id).map(e=>({...e, dateLabel:this.fmtDate(e.date), bookingCount:s.db.bookings.filter(b=>b.clientId===u.id && b.status!=='Declined').length}));
+      const tids=Object.keys(s.db.messages).filter(t=>t.startsWith(u.id+'__'));
+      threadList=tids.map(tid=>{
+        const vid=tid.split('__')[1]; const v=s.db.vendors.find(x=>x.id===vid)||{name:'Vendor'};
+        const msgs=s.db.messages[tid]||[]; const last=msgs[msgs.length-1];
+        return { tid, name:v.name, mono:v.mono||'', color:v.color||'#7a2b2e', preview:last?last.text:'', onClick:()=>this.setThread(tid), bg:s.activeThread===tid?'#faf1e4':'#fff' };
+      });
+      let at=s.activeThread; if(at && !tids.includes(at)) at=null;
+      if(!at && tids.length) at=tids[0];
+      if(at){
+        const vid=at.split('__')[1]; const v=s.db.vendors.find(x=>x.id===vid)||{name:'Vendor'};
+        activeThreadName=v.name;
+        activeMessages=(s.db.messages[at]||[]).map(m=>({ text:m.text, align:m.from==='client'?'flex-end':'flex-start', bg:m.from==='client'?'#7a2b2e':'#efe3d0', color:m.from==='client'?'#f7f1e7':'#2a2320' }));
+      }
+    }
+    const clientTabs=[['events','Events'],['bookings','Bookings'],['messages','Messages']].map(([k,label])=>{
+      const active=s.clientTab===k;
+      return { label, onClick:()=>this.setClientTab(k), bg:active?'#efe3d0':'transparent', color:active?'#7a2b2e':'#4a3f38', border:active?'#7a2b2e':'transparent' };
+    });
+
+    // vendor dashboard data
+    let incoming=[], mv=this.myVendor();
+    if(u && u.role==='vendor' && mv){
+      incoming=s.db.bookings.filter(b=>b.vendorId===mv.id).map(b=>{
+        const st=this.statusStyle(b.status);
+        return {...b, dateLabel:this.fmtDate(b.date), statusBg:st.bg, statusColor:st.color, hasNotes:!!(b.notes&&b.notes.trim()), isPending:b.status==='Pending', onAccept:()=>this.acceptBooking(b.id), onDecline:()=>this.declineBooking(b.id)};
+      });
+    }
+    const vendorTabs=[['bookings','Bookings'],['profile','Profile']].map(([k,label])=>{
+      const active=s.vendorTab===k;
+      return { label, onClick:()=>this.setVendorTab(k), bg:active?'#efe3d0':'transparent', color:active?'#7a2b2e':'#4a3f38', border:active?'#7a2b2e':'transparent' };
+    });
+    const pendingCount=incoming.filter(b=>b.status==='Pending').length;
+    const confirmedCount=incoming.filter(b=>b.status==='Confirmed').length;
+
+    // booking modal services
+    const bkVendor=s.bookingVendorId?s.db.vendors.find(v=>v.id===s.bookingVendorId):null;
+    const bookingServices=bkVendor?bkVendor.services.map(sv=>({name:sv.name,label:sv.name+' · '+sv.price})):[];
+
+    return {
+      // nav
+      loggedIn, loggedOut:!loggedIn, goMarket:this.goMarket, goDash:this.goDash, goLogin:this.goLogin, goSignup:this.goSignup, logout:this.logout,
+      userLabel: u? (u.role==='vendor'?'Vendor · '+u.name.split(' ')[0]:u.name.split(' ')[0]) : '',
+      // views
+      isMarket:s.view==='market', isVendorPage:s.view==='vendor'&&!!av, isAuth:s.view==='auth', isClient:s.view==='client'&&!!u, isVendorDash:s.view==='vendorDash'&&!!mv,
+      // toast
+      toast:s.toast,
+      // filters
+      q:s.q, city:s.city, sort:s.sort, cityOptions:['All',...this.CITIES], catChips,
+      filteredVendors, resultCount: filtered.length+' '+(filtered.length===1?'vendor':'vendors'), noResults:filtered.length===0, clearFilters:this.clearFilters,
+      // vendor page
+      av: av?{...av, coverImg:coverOf(av), mono: VIMG[av.name]?'':av.mono}:{portfolio:[],services:[],reviews:[]}, openBooking:this.openBooking, messageVendor:this.messageVendor,
+      // booking modal
+      bookingOpen:!!bkVendor, bookingVendorName:bkVendor?bkVendor.name:'', bookingServices,
+      bkService:s.bkService, bkDate:s.bkDate, bkTime:s.bkTime, bkNotes:s.bkNotes,
+      onBkService:this.onBkService, onBkDate:this.onBkDate, onBkTime:this.onBkTime, onBkNotes:this.onBkNotes,
+      submitBooking:this.submitBooking, closeBooking:this.closeBooking, stop:this.stop,
+      // auth
+      isSignup, authSubtitle:isSignup?'Create your account':'Welcome back',
+      loginTabBg:!isSignup?tabActive.bg:tabIdle.bg, loginTabColor:!isSignup?tabActive.color:tabIdle.color,
+      signupTabBg:isSignup?tabActive.bg:tabIdle.bg, signupTabColor:isSignup?tabActive.color:tabIdle.color,
+      clientRoleBg:s.authRole==='client'?roleActive.bg:roleIdle.bg, clientRoleColor:s.authRole==='client'?roleActive.color:roleIdle.color, clientRoleBorder:s.authRole==='client'?roleActive.border:roleIdle.border,
+      vendorRoleBg:s.authRole==='vendor'?roleActive.bg:roleIdle.bg, vendorRoleColor:s.authRole==='vendor'?roleActive.color:roleIdle.color, vendorRoleBorder:s.authRole==='vendor'?roleActive.border:roleIdle.border,
+      namePlaceholder:s.authRole==='vendor'?'Business name':'Your name',
+      afName:s.afName, afEmail:s.afEmail, afPass:s.afPass,
+      onAfName:this.onAfName, onAfEmail:this.onAfEmail, onAfPass:this.onAfPass,
+      setLogin:this.setLogin, setSignup:this.setSignup, setRoleClient:this.setRoleClient, setRoleVendor:this.setRoleVendor,
+      submitAuth:this.submitAuth, toggleAuthMode:this.toggleAuthMode,
+      authCta:isSignup?'Create Account':'Log In',
+      authSwitchText:isSignup?'Already have an account?':"Don't have an account?",
+      authSwitchLink:isSignup?'Log in':'Sign up',
+      // client dash
+      firstName: u?u.name.split(' ')[0]:'', clientTabs,
+      ctEvents:s.clientTab==='events', ctBookings:s.clientTab==='bookings', ctMessages:s.clientTab==='messages',
+      evName:s.evName, evDate:s.evDate, evType:s.evType, eventTypes:['Wedding','Engagement','Mehndi & Sangeet','Baby Shower','Griha Pravesh','Anniversary','Other'],
+      onEvName:this.onEvName, onEvDate:this.onEvDate, onEvType:this.onEvType, addEvent:this.addEvent,
+      myEvents, hasEvents:myEvents.length>0, noEvents:myEvents.length===0,
+      myBookings, hasBookings:myBookings.length>0, noBookings:myBookings.length===0,
+      threadList, hasThreads:threadList.length>0, noThreads:threadList.length===0,
+      activeMessages, activeThreadName, msgInput:s.msgInput, onMsgInput:this.onMsgInput, onMsgKey:this.onMsgKey, sendMessage:this.sendMessage,
+      // vendor dash
+      vendorBizName: mv?mv.name:'', vendorTabs, vtBookings:s.vendorTab==='bookings', vtProfile:s.vendorTab==='profile',
+      incoming, hasIncoming:incoming.length>0, noIncoming:incoming.length===0, pendingCount, confirmedCount,
+      pfName:s.pf.name||'', pfCategory:s.pf.category||'', pfCity:s.pf.city||'', pfPrice:s.pf.priceRange||'', pfTagline:s.pf.tagline||'', pfAbout:s.pf.about||'',
+      onPfName:this.onPfName, onPfCategory:this.onPfCategory, onPfCity:this.onPfCity, onPfPrice:this.onPfPrice, onPfTagline:this.onPfTagline, onPfAbout:this.onPfAbout,
+      saveProfile:this.saveProfile, viewMyProfile:this.viewMyProfile,
+      categoryOptions:this.CATS, cityEditOptions:this.CITIES,
+    };
+  }
+}
+</script>
+</body>
+</html>
