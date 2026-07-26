@@ -55,6 +55,56 @@
   a { color:#7a2b2e; text-decoration:none; }
   a:hover { color:#5f2022; }
   img { display:block; }
+
+  #nav-toggle { display:none; }
+  .nav-burger { display:none; }
+
+  @media (max-width:880px){
+    [style*="grid-template-columns: repeat(4"],
+    [style*="grid-template-columns: repeat(3"],
+    [style*="grid-template-columns: 1.4fr"]{ grid-template-columns:1fr !important; }
+    [style*="gap: 34px"]{ gap:24px !important; }
+    [style*="gap: 40px"]{ gap:32px !important; }
+
+    .nav-burger{
+      display:block !important;
+      cursor:pointer;
+      font-size:24px;
+      line-height:1;
+      padding:4px 6px;
+    }
+    .nav-links{
+      display:none !important;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      flex-direction:column !important;
+      align-items:flex-start !important;
+      gap:18px !important;
+      background:#f7f1e7;
+      padding:22px 8vw 28px !important;
+      border-bottom:1px solid rgba(42,35,32,0.12);
+      box-shadow:0 20px 30px -20px rgba(42,35,32,0.35);
+    }
+    #nav-toggle:checked ~ .nav-links{ display:flex !important; }
+  }
+
+  @media (max-width:620px){
+    [style*="padding: 16px 5vw"]{ padding:14px 6vw !important; }
+    [style*="padding: 96px 8vw 54px"]{ padding:64px 7vw 40px !important; }
+    [style*="padding: 90px 8vw"],
+    [style*="padding: 100px 8vw"],
+    [style*="padding: 120px 8vw"]{ padding-top:56px !important; padding-bottom:56px !important; padding-left:7vw !important; padding-right:7vw !important; }
+    [style*="padding: 20px 8vw 100px"]{ padding:16px 7vw 56px !important; }
+    [style*="padding: 0px 8vw 100px"]{ padding:0 7vw 56px !important; }
+    [style*="padding: 70px 8vw 50px"]{ padding:48px 7vw 36px !important; }
+
+    .hero-search{ flex-direction:column !important; max-width:420px !important; }
+    .hero-search > div{ border-right:none !important; }
+    .hero-search > div:not(:last-child){ border-bottom:1px solid rgba(42,35,32,0.15) !important; }
+    .hero-search > div:last-child{ justify-content:center !important; padding:16px 22px !important; }
+  }
 </style>
 <meta name="ext-resource-dependency" content="assets/cat-venues.jpg">
 <meta name="ext-resource-dependency" content="assets/cat-photo.jpg">
@@ -83,7 +133,9 @@
       <img src="assets/loom-mark.png" alt="Loom" style="height:38px; width:auto;">
       <span style="font-family:'Cormorant Garamond',serif; font-size:25px; letter-spacing:0.04em; font-weight:500;">Loom</span>
     </div>
-    <div style="display:flex; gap:30px; align-items:center;">
+    <input type="checkbox" id="nav-toggle">
+    <label for="nav-toggle" class="nav-burger" aria-label="Menu">☰</label>
+    <div class="nav-links" style="display:flex; gap:30px; align-items:center;">
       <a href="#categories" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Vendors</a>
       <a href="#categories" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Venues</a>
       <a href="#inspiration" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Inspiration</a>
@@ -99,7 +151,7 @@
     <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:24px;">For the South Asian Diaspora · US · UK · Canada · Europe · Gulf · India</div>
     <h1 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(44px,6vw,68px); line-height:1.08; margin:0 0 24px;">Every detail of your celebration, <em style="font-style:italic; color:#7a2b2e;">seamlessly woven.</em></h1>
     <p style="font-size:17px; line-height:1.7; color:#4a3f38; max-width:580px; margin:0 auto 38px;">Find trusted South Asian vendors near you or back home — venues, photographers, makeup, décor, catering and more, for weddings and every celebration in between.</p>
-    <div style="display:flex; max-width:660px; margin:0 auto; border:1px solid rgba(42,35,32,0.25); background:#fff;">
+    <div class="hero-search" style="display:flex; max-width:660px; margin:0 auto; border:1px solid rgba(42,35,32,0.25); background:#fff;">
       <div style="flex:1.2; padding:16px 22px; border-right:1px solid rgba(42,35,32,0.15); text-align:left;"><div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#8a7b6e;">Occasion</div><div style="font-size:15px; color:#2a2320; margin-top:3px;">Wedding ▾</div></div>
       <div style="flex:1; padding:16px 22px; border-right:1px solid rgba(42,35,32,0.15); text-align:left;"><div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#8a7b6e;">Where</div><div style="font-size:15px; color:#2a2320; margin-top:3px;">Toronto, CA ▾</div></div>
       <div style="background:#7a2b2e; color:#f7f1e7; display:flex; align-items:center; padding:0 34px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer;">Search</div>
