@@ -593,7 +593,7 @@ class Component extends DCLogic {
       let vendorId;
       if(authMode==='signup'){
         const name = afName.trim() || 'New Studio';
-        const v = { id:this.uid(), name, category:'Venues', city:'Toronto', priceRange:'$$$', rating:5.0, reviewCount:0, tagline:'A new vendor on Loom.', about:'Tell couples about your services from the Profile tab of your dashboard.', services:[{name:'Consultation',price:'free'},{name:'Starter package',price:'from $800'},{name:'Full package',price:'from $2,000'}], portfolio:['#7a2b2e','#c99a4a','#5f6b52','#4a3f38'], reviews:[], color:this.CATCOLOR['Venues'], mono:this.monoOf(name) };
+        const v = { id:this.uid(), name, category:'Venues', city:'Toronto', priceRange:'$$$', rating:5.0, reviewCount:0, tagline:'A new vendor on Loom.', about:'Tell clients about your services from the Profile tab of your dashboard.', services:[{name:'Consultation',price:'free'},{name:'Starter package',price:'from $800'},{name:'Full package',price:'from $2,000'}], portfolio:['#7a2b2e','#c99a4a','#5f6b52','#4a3f38'], reviews:[], color:this.CATCOLOR['Venues'], mono:this.monoOf(name) };
         newDb = { ...db, vendors:[v, ...db.vendors] };
         vendorId = v.id;
       } else {
