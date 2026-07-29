@@ -511,13 +511,21 @@ class Component extends DCLogic {
     };
   }
   componentDidMount() {
+    let saved = null;
     try {
       const raw = localStorage.getItem(this.KEY);
-      if (raw) {
-        const saved = JSON.parse(raw);
-        this.setState({ db: saved.db || this.state.db, user: saved.user || null });
-      }
+      if (raw) saved = JSON.parse(raw);
     } catch(e) {}
+    const user = saved && saved.user ? saved.user : null;
+    const db = saved && saved.db ? saved.db : this.state.db;
+    // hash routing so marketing CTAs can deep-link (#login, #signup, #dashboard)
+    const h = (location.hash || '').replace('#','').toLowerCase();
+    let patch = { db, user };
+    if (h === 'login')  patch = { ...patch, view:'auth', authMode:'login' };
+    else if (h === 'signup') patch = { ...patch, view:'auth', authMode:'signup' };
+    else if (h === 'dashboard' && user) patch = { ...patch, view: user.role==='vendor'?'vendorDash':'client' };
+    else if (h === 'market' || h === 'marketplace') patch = { ...patch, view:'market' };
+    this.setState(patch);
   }
   persist(db, user) {
     const nextDb = db || this.state.db;
