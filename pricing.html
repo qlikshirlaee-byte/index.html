@@ -29,8 +29,8 @@
   <!-- NAV -->
   <div style="display:flex; align-items:center; justify-content:space-between; padding:20px 5vw; border-bottom:1px solid rgba(42,35,32,0.1);">
     <a href="index.html" style="display:flex; align-items:center; gap:11px;">
-      <img src="assets/loom-mark.png" alt="Väv" style="height:34px; width:auto;">
-      <span style="font-family:'Cormorant Garamond',serif; font-size:25px; letter-spacing:0.03em; font-weight:500; color:#2a2320;">Väv</span>
+      <img src="assets/loom-mark.png" alt="Loom" style="height:34px; width:auto;">
+      <span style="font-family:'Cormorant Garamond',serif; font-size:25px; letter-spacing:0.03em; font-weight:500; color:#2a2320;">Loom</span>
     </a>
     <div style="display:flex; gap:30px; align-items:center;">
       <a href="index.html" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Home</a>
@@ -70,7 +70,7 @@
   <section style="max-width:1180px; margin:0 auto; padding:40px 5vw 30px;">
     <div style="text-align:center; margin-bottom:34px;">
       <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(28px,3.6vw,42px); margin:0 0 10px;">A plan for your team, a commission for your wins.</h2>
-      <p style="font-size:15px; color:#8a7b6e; margin:0;">Pick the tier that fits your team, then pay a small commission only on the events you actually book through Väv. Scale up and the commission drops.</p>
+      <p style="font-size:15px; color:#8a7b6e; margin:0;">Pick the tier that fits your team, then pay a small commission only on the events you actually book through Loom. Scale up and the commission drops.</p>
     </div>
     <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:stretch;">
 
@@ -129,7 +129,7 @@
         </div>
       </div>
     </div>
-    <p style="text-align:center; font-size:14px; color:#8a7b6e; margin:26px 0 0;">Save two months when you pay yearly. Clients always use Väv free.</p>
+    <p style="text-align:center; font-size:14px; color:#8a7b6e; margin:26px 0 0;">Save two months when you pay yearly. Clients always use Loom free.</p>
   </section>
 
   <!-- TRANSPARENT FEES -->
@@ -137,7 +137,7 @@
     <div style="text-align:center; margin-bottom:44px;">
       <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:16px;">No fine print</div>
       <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,4vw,46px); margin:0 0 12px;">Everything else, out in the open.</h2>
-      <p style="font-size:15.5px; color:#4a3f38; margin:0; max-width:600px; margin:0 auto;">Beyond your subscription, here is every cent Väv ever charges — and when.</p>
+      <p style="font-size:15.5px; color:#4a3f38; margin:0; max-width:600px; margin:0 auto;">Beyond your subscription, here is every cent Loom ever charges — and when.</p>
     </div>
     <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
       <sc-for list="{{ fees }}" as="f" hint-placeholder-count="3">
@@ -175,8 +175,8 @@
 
   <!-- FOOTER -->
   <footer style="padding:44px 5vw; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; border-top:1px solid rgba(42,35,32,0.12); font-size:13px; color:#6b5e54;">
-    <a href="index.html"><div style="display:flex; align-items:center; gap:9px;"><img src="assets/loom-mark.png" alt="Väv" style="height:36px; width:auto;"><span style="font-family:'Cormorant Garamond',serif; font-size:27px; letter-spacing:0.05em; color:#2a2320; font-weight:500;">Väv</span></div></a>
-    <div style="font-family:'Cormorant Garamond',serif; font-style:italic; letter-spacing:0.08em;">© 2026 Väv · theloomplatform.com</div>
+    <a href="index.html"><img src="assets/loom-logo-full.png" alt="Loom — weaving connections for unforgettable events" style="width:120px; height:auto;"></a>
+    <div style="font-family:'Cormorant Garamond',serif; font-style:italic; letter-spacing:0.08em;">© 2026 Loom · theloomplatform.com</div>
   </footer>
 
 </div>
@@ -214,16 +214,16 @@ class Component extends DCLogic {
         'Dedicated onboarding & support',
       ],
       fees: [
-        { rate:'3–8%', title:'Per-event commission', body:'A small share of each event you book and run through Väv — 8% on Solo, 5% on Studio, 3% on Agency. The more you scale, the less you pay.' },
-        { rate:'Included', title:'Väv Payments', body:'Collect deposits and invoices in one place. Your commission is simply deducted at payout — nothing to invoice or reconcile.' },
+        { rate:'3–8%', title:'Per-event commission', body:'A small share of each event you book and run through Loom — 8% on Solo, 5% on Studio, 3% on Agency. The more you scale, the less you pay.' },
+        { rate:'Included', title:'Loom Payments', body:'Collect deposits and invoices in one place. Your commission is simply deducted at payout — nothing to invoice or reconcile.' },
         { rate:'$0', title:'For your clients', body:'Clients browse, book, message and coordinate their whole event at no cost, on every plan, forever.' },
       ],
       faqs: [
         { q: 'Who owns the shared event workspace?', a: 'The client — the host or organiser. The event is theirs, so the workspace is theirs, and it\'s always free. You and the other vendors are invited in as collaborators. That\'s why there\'s never a charge tied to a workspace: billing only ever attaches to a professional\'s own account.' },
-        { q: 'Do my clients pay anything?', a: 'Never. Clients use Väv completely free — browsing, booking, messaging and coordinating their event. That keeps demand high for the professionals who serve them.' },
-        { q: 'How does the per-event commission work?', a: 'You pay your monthly plan plus a small commission on each event you book and run through Väv — 8% on Solo, 5% on Studio, 3% on Agency. It\'s deducted automatically at payout, and it only ever applies to events you actually win here. There\'s never a charge just for joining a workspace.' },
+        { q: 'Do my clients pay anything?', a: 'Never. Clients use Loom completely free — browsing, booking, messaging and coordinating their event. That keeps demand high for the professionals who serve them.' },
+        { q: 'How does the per-event commission work?', a: 'You pay your monthly plan plus a small commission on each event you book and run through Loom — 8% on Solo, 5% on Studio, 3% on Agency. It\'s deducted automatically at payout, and it only ever applies to events you actually win here. There\'s never a charge just for joining a workspace.' },
         { q: 'Which plan is right for me?', a: 'Solo if you work on your own, Studio for a small team running several events at once, and Agency for large teams and production companies operating at scale.' },
-        { q: 'Why a subscription and a commission?', a: 'The subscription keeps your monthly cost low and predictable; the commission means Väv only earns more when you do. Together they let us keep Väv completely free for every client while sustaining the platform.' },
+        { q: 'Why a subscription and a commission?', a: 'The subscription keeps your monthly cost low and predictable; the commission means Loom only earns more when you do. Together they let us keep Loom completely free for every client while sustaining the platform.' },
         { q: 'Can I cancel anytime?', a: 'Anytime, no penalty. You keep access through the end of your billing period, and your marketplace listing stays live.' },
       ],
     };

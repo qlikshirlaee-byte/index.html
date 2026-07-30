@@ -1,6 +1,6 @@
-# Väv — theloomplatform.com
+# Loom — theloomplatform.com
 
-Static site for Väv, the South Asian celebration marketplace.
+Static site for Loom, the South Asian celebration marketplace.
 
 ## Deploy to GitHub Pages
 Upload **everything in this folder** to the root of your repo, keeping the
