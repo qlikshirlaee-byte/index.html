@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<meta name="ext-resource-dependency" content="assets/cat-venues.jpg">
+<meta name="ext-resource-dependency" content="assets/cat-photo.jpg">
+<meta name="ext-resource-dependency" content="assets/cat-makeup.jpg">
+<meta name="ext-resource-dependency" content="assets/cat-decor.jpg">
+<meta name="ext-resource-dependency" content="assets/cat-catering.jpg">
+<meta name="ext-resource-dependency" content="assets/cat-planners.jpg">
+<meta name="ext-resource-dependency" content="assets/screenshot-projects.png">
+<meta name="ext-resource-dependency" content="assets/screenshot-clients.png">
+<meta name="ext-resource-dependency" content="assets/screenshot-billing.png">
+<meta name="ext-resource-dependency" content="assets/screenshot-staff.png">
+<meta name="ext-resource-dependency" content="assets/screenshot-inventory.png">
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#7a2b2e"/><text x="50" y="60" font-size="30" fill="#f7f1e7" text-anchor="middle" font-family="serif">L</text></svg></template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="ext-resource-dependency" content="assets/cat-venues.jpg">
+<meta name="ext-resource-dependency" content="assets/cat-photo.jpg">
+<meta name="ext-resource-dependency" content="assets/cat-makeup.jpg">
+<meta name="ext-resource-dependency" content="assets/cat-decor.jpg">
+<meta name="ext-resource-dependency" content="assets/cat-catering.jpg">
+<meta name="ext-resource-dependency" content="assets/cat-planners.jpg">
+<meta name="ext-resource-dependency" content="assets/screenshot-projects.png">
+<meta name="ext-resource-dependency" content="assets/screenshot-clients.png">
+<meta name="ext-resource-dependency" content="assets/screenshot-billing.png">
+<meta name="ext-resource-dependency" content="assets/screenshot-staff.png">
+<meta name="ext-resource-dependency" content="assets/screenshot-inventory.png">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background:#7a2b2e; color:#f6efe6; }
+  a { color:#7a2b2e; text-decoration:none; }
+  a:hover { color:#5f2022; }
+  img { display:block; }
+  @keyframes weaveIn { from { opacity:0; transform:translateY(14px);} to { opacity:1; transform:translateY(0);} }
+  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+  img { max-width:100%; }
+  /* __om_responsive */
+  @media (max-width:1024px){
+    [style*="padding: 16px 5vw"]{ flex-wrap:wrap !important; row-gap:10px !important; }
+    [style*="gap: 30px"]{ flex:1 1 100% !important; flex-wrap:wrap !important; gap:10px 14px !important; justify-content:flex-end !important; }
+  }
+  @media (max-width:960px){
+    [style*="grid-template-columns: repeat(4, 1fr)"],
+    [style*="grid-template-columns: repeat(3, 1fr)"]{ grid-template-columns:repeat(2,1fr) !important; }
+    [style*="grid-template-columns: 1fr 1fr;"]{ grid-template-columns:1fr !important; }
+    [style*="grid-template-columns: 1.4fr 1fr 1fr 1fr"]{ grid-template-columns:1fr 1fr !important; }
+    [style*="gap: 64px"]{ gap:40px !important; }
+    [style*="margin-left: 40px"]{ margin-left:0 !important; }
+  }
+  @media (max-width:640px){
+    [style*="grid-template-columns: repeat(4, 1fr)"],
+    [style*="grid-template-columns: repeat(3, 1fr)"],
+    [style*="grid-template-columns: repeat(2, 1fr)"]{ grid-template-columns:1fr !important; }
+    [style*="grid-template-columns: 1.4fr 1fr 1fr 1fr"]{ grid-template-columns:1fr 1fr !important; }
+    [style*="flex: 0 0 196px"]{ flex-basis:auto !important; width:100% !important; }
+    [style*="min-width: 300px"]{ min-width:0 !important; }
+    [style*="min-width: 240px"]{ min-width:0 !important; }
+    [style*="padding: 110px 8vw"]{ padding:64px 7vw !important; }
+    [style*="padding: 120px 8vw"]{ padding:70px 7vw !important; }
+    [style*="padding: 100px 8vw"]{ padding:60px 7vw !important; }
+    [style*="padding: 96px 8vw"]{ padding:60px 7vw !important; }
+    [style*="padding: 90px 8vw"]{ padding:56px 7vw !important; }
+  }
+</style>
+</helmet>
+
+<div style="background:#f7f1e7; color:#2a2320; font-family:'Jost',sans-serif; width:100%; overflow-x:hidden;">
+
+  <!-- NAV -->
+  <div style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:16px 5vw; background:rgba(247,241,231,0.94); backdrop-filter:blur(6px); border-bottom:1px solid rgba(42,35,32,0.1);">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <img src="assets/loom-mark.png" alt="Loom" style="height:38px; width:auto;">
+      <span style="font-family:'Cormorant Garamond',serif; font-size:25px; letter-spacing:0.04em; font-weight:500;">Loom</span>
+    </div>
+    <div style="display:flex; gap:30px; align-items:center;">
+      <a href="#workspace" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">The Workspace</a>
+      <a href="#marketplace" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Marketplace</a>
+      <a href="#professionals" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">For Professionals</a>
+      <a href="integrations.html" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Integrations</a>
+      <a href="pricing.html" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Pricing</a>
+      <a href="app.html#login" style="color:#2a2320; font-size:13px; letter-spacing:0.06em; text-transform:uppercase;" style-hover="color:#7a2b2e;">Log In</a>
+      <a href="early-access.html" style="background:#7a2b2e; color:#f7f1e7; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; padding:11px 22px;" style-hover="background:#5f2022;">Request Early Access</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section style="padding:110px 8vw 90px; text-align:center; max-width:1000px; margin:0 auto;">
+    <div style="font-size:12px; letter-spacing:0.32em; text-transform:uppercase; color:#7a2b2e; margin-bottom:28px; animation:weaveIn 0.7s ease both;">Weaving Connections for Unforgettable Events</div>
+    <h1 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(46px,6.4vw,76px); line-height:1.06; margin:0 0 26px; animation:weaveIn 0.8s ease both;">Your event deserves <em style="font-style:italic; color:#7a2b2e;">one source of truth.</em></h1>
+    <p style="font-size:19px; line-height:1.6; color:#2a2320; max-width:660px; margin:0 auto 22px; font-weight:500; animation:weaveIn 0.85s ease both;">Loom is the shared workspace where clients, vendors and planners run an entire event together — marketplace, timeline, conversations, payments and files, all in one place.</p>
+    <p style="font-size:18px; line-height:1.75; color:#4a3f38; max-width:620px; margin:0 auto 14px; animation:weaveIn 0.9s ease both;">Every unforgettable event is built on hundreds of moving parts. Loom weaves together every client, vendor, payment, timeline and conversation into one connected workspace — so every celebration unfolds seamlessly.</p>
+    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:17.5px; color:#7a2b2e; margin:0 auto 40px; animation:weaveIn 0.95s ease both;">Because missed messages become missed moments.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; animation:weaveIn 1s ease both;">
+      <a href="app.html#signup" style="background:#7a2b2e; color:#f7f1e7; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; padding:17px 40px;" style-hover="background:#5f2022;">Start Planning</a>
+      <a href="#professionals" style="border:1px solid rgba(42,35,32,0.3); color:#2a2320; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; padding:17px 40px;" style-hover="border-color:#2a2320;">For Event Professionals</a>
+    </div>
+    <div style="margin-top:64px; display:flex; justify-content:center; gap:40px; flex-wrap:wrap; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#8a7b6e;">
+      <sc-for list="{{ trust }}" as="t" hint-placeholder-count="4"><span>{{ t }}</span></sc-for>
+    </div>
+  </section>
+
+  <!-- HERO PRODUCT GLIMPSE -->
+  <section style="padding:0 6vw 100px; max-width:1220px; margin:0 auto;">
+    <div style="background:#2a2320; padding:14px; box-shadow:0 50px 120px -55px rgba(42,35,32,0.8);">
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:8px 12px 16px; gap:16px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <div style="display:flex; gap:7px;">
+            <span style="width:11px; height:11px; border-radius:50%; background:#7a2b2e;"></span>
+            <span style="width:11px; height:11px; border-radius:50%; background:#c99a4a;"></span>
+            <span style="width:11px; height:11px; border-radius:50%; background:#4a3f38;"></span>
+          </div>
+          <span style="color:#f7f1e7; font-family:'Cormorant Garamond',serif; font-size:17px;">Anaya &amp; Rohan · Wedding · 14 Aug</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+          <span style="font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:rgba(247,241,231,0.5);">In this workspace</span>
+          <sc-for list="{{ participants }}" as="pp" hint-placeholder-count="5">
+            <span style="border:1px solid rgba(247,241,231,0.28); color:#f7f1e7; font-size:12px; padding:5px 12px; border-radius:999px;">{{ pp }}</span>
+          </sc-for>
+        </div>
+      </div>
+      <div style="background:#fbf7f0; display:flex; flex-wrap:wrap; min-height:540px; font-family:'Jost',sans-serif; text-align:left; overflow:hidden;">
+  <div style="width:196px; flex:0 0 196px; background:#efe6d7; border-right:1px solid rgba(42,35,32,0.1); padding:20px 0; display:flex; flex-direction:column;">
+    <div style="padding:0 20px 4px; font-family:'Cormorant Garamond',serif; font-size:20px; color:#2a2320;">Anaya &amp; Rohan</div>
+    <div style="padding:0 20px 22px; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;">Wedding · Aug 14</div>
+    <div style="display:flex; align-items:center; gap:10px; padding:9px 20px; font-size:13.5px; color:#7a2b2e; background:#fbf7f0; border-left:2px solid #7a2b2e; font-weight:500;"><span style="color:#7a2b2e; font-size:11px;">◆</span>Overview</div><div style="display:flex; align-items:center; gap:10px; padding:9px 20px; font-size:13.5px; color:#4a3f38; border-left:2px solid transparent;"><span style="color:#a89a8b; font-size:11px;">◆</span>Timeline</div><div style="display:flex; align-items:center; gap:10px; padding:9px 20px; font-size:13.5px; color:#4a3f38; border-left:2px solid transparent;"><span style="color:#a89a8b; font-size:11px;">◆</span>Tasks</div><div style="display:flex; align-items:center; gap:10px; padding:9px 20px; font-size:13.5px; color:#4a3f38; border-left:2px solid transparent;"><span style="color:#a89a8b; font-size:11px;">◆</span>Documents</div><div style="display:flex; align-items:center; gap:10px; padding:9px 20px; font-size:13.5px; color:#4a3f38; border-left:2px solid transparent;"><span style="color:#a89a8b; font-size:11px;">◆</span>Payments</div><div style="display:flex; align-items:center; gap:10px; padding:9px 20px; font-size:13.5px; color:#4a3f38; border-left:2px solid transparent;"><span style="color:#a89a8b; font-size:11px;">◆</span>Messages<span style="margin-left:auto; background:#7a2b2e; color:#f7f1e7; font-size:10px; min-width:16px; height:16px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; padding:0 4px; font-weight:500;">3</span></div>
+    <div style="margin-top:auto; padding:20px 20px 0;">
+      <div style="font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#a89a8b; margin-bottom:10px;">In this workspace</div>
+      <div style="display:flex; gap:6px;"><span style="width:26px; height:26px; border-radius:50%; background:#7a2b2e; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">A</span><span style="width:26px; height:26px; border-radius:50%; background:#5f6b52; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">P</span><span style="width:26px; height:26px; border-radius:50%; background:#c99a4a; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">R</span><span style="width:26px; height:26px; border-radius:50%; background:#4a3f38; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">V</span><span style="width:26px; height:26px; border-radius:50%; background:#9c6b3f; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">D</span></div>
+    </div>
+  </div>
+  <div style="flex:1 1 360px; min-width:300px; padding:22px 22px; display:flex; flex-direction:column; gap:16px;">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:24px; color:#2a2320;">Overview</div>
+      <span style="background:#7a2b2e; color:#f7f1e7; font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase; padding:8px 14px;">Event day in 12 days</span>
+    </div>
+    <div style="background:#fff; border:1px solid rgba(42,35,32,0.1); padding:16px 18px;"><div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;"><span style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;">Shared Timeline</span><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#e7ede1; color:#5f6b52; padding:3px 9px; border-radius:999px; white-space:nowrap;">On track</span></div><div style="display:flex; align-items:center; gap:12px; padding:9px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:7px; height:7px; border-radius:50%; background:#c99a4a; flex-shrink:0;"></span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320;">Mehndi &amp; Sangeet</div><div style="font-size:11.5px; color:#8a7b6e;">Aug 12 · 6:00 PM</div></div><span style="width:26px; height:26px; border-radius:50%; background:#9c6b3f; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">D</span><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#e7ede1; color:#5f6b52; padding:3px 9px; border-radius:999px; white-space:nowrap;">Confirmed</span></div><div style="display:flex; align-items:center; gap:12px; padding:9px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:7px; height:7px; border-radius:50%; background:#c99a4a; flex-shrink:0;"></span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320;">Baraat &amp; Ceremony</div><div style="font-size:11.5px; color:#8a7b6e;">Aug 14 · 10:00 AM</div></div><span style="width:26px; height:26px; border-radius:50%; background:#c99a4a; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">R</span><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#f6ecd6; color:#9c6b3f; padding:3px 9px; border-radius:999px; white-space:nowrap;">In progress</span></div><div style="display:flex; align-items:center; gap:12px; padding:9px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:7px; height:7px; border-radius:50%; background:#c99a4a; flex-shrink:0;"></span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320;">Reception</div><div style="font-size:11.5px; color:#8a7b6e;">Aug 14 · 7:45 PM</div></div><span style="width:26px; height:26px; border-radius:50%; background:#4a3f38; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">V</span><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#efe6d7; color:#8a7b6e; padding:3px 9px; border-radius:999px; white-space:nowrap;">Upcoming</span></div></div>
+    <div style="background:#fff; border:1px solid rgba(42,35,32,0.1); padding:16px 18px;"><div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;"><span style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;">Tasks &amp; Owners</span><span style="font-size:11.5px; color:#8a7b6e;">2 of 4 done</span></div><div style="display:flex; align-items:center; gap:11px; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:16px; height:16px; border-radius:4px; border:1.5px solid #5f6b52; background:#5f6b52; color:#fff; font-size:11px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;">✓</span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#8a7b6e; text-decoration:line-through;">Confirm mandap floral palette</div></div><span style="width:26px; height:26px; border-radius:50%; background:#9c6b3f; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">D</span><span style="font-size:11.5px; color:#8a7b6e; white-space:nowrap;">Done</span></div><div style="display:flex; align-items:center; gap:11px; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:16px; height:16px; border-radius:4px; border:1.5px solid #5f6b52; background:#5f6b52; color:#fff; font-size:11px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;">✓</span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#8a7b6e; text-decoration:line-through;">Share ceremony run of show</div></div><span style="width:26px; height:26px; border-radius:50%; background:#5f6b52; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">P</span><span style="font-size:11.5px; color:#8a7b6e; white-space:nowrap;">Done</span></div><div style="display:flex; align-items:center; gap:11px; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:16px; height:16px; border-radius:4px; border:1.5px solid #c9bdae; background:#fff; color:#fff; font-size:11px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;"></span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320; ">Final headcount to caterer</div></div><span style="width:26px; height:26px; border-radius:50%; background:#5f6b52; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">P</span><span style="font-size:11.5px; color:#8a7b6e; white-space:nowrap;">Aug 8</span></div><div style="display:flex; align-items:center; gap:11px; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:16px; height:16px; border-radius:4px; border:1.5px solid #c9bdae; background:#fff; color:#fff; font-size:11px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;"></span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320; ">Deliver portrait shotlist</div></div><span style="width:26px; height:26px; border-radius:50%; background:#c99a4a; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">R</span><span style="font-size:11.5px; color:#8a7b6e; white-space:nowrap;">Aug 10</span></div></div>
+  </div>
+  <div style="flex:1 1 260px; min-width:240px; padding:22px 22px 22px 0; display:flex; flex-direction:column; gap:16px;">
+    <div style="background:#fff; border:1px solid rgba(42,35,32,0.1); padding:16px 18px;"><div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;"><span style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;"><span style="display:inline-flex; align-items:center; gap:7px;"><span style="width:7px;height:7px;border-radius:50%;background:#5f6b52;animation:pulse 1.8s ease-in-out infinite;"></span>Recent activity</span></span></div><div style="display:flex; gap:9px; align-items:flex-start; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:7px; height:7px; border-radius:50%; background:#5f6b52; margin-top:5px; flex-shrink:0; animation:pulse 1.8s ease-in-out infinite;"></span><div style="font-size:12.5px; color:#2a2320; line-height:1.45;">Saubhagya Décor confirmed the reset <span style="color:#8a7b6e;">· 2m</span></div></div><div style="display:flex; gap:9px; align-items:flex-start; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:7px; height:7px; border-radius:50%; background:#5f6b52; margin-top:5px; flex-shrink:0; "></span><div style="font-size:12.5px; color:#2a2320; line-height:1.45;">Aperture Films uploaded a gallery <span style="color:#8a7b6e;">· 14m</span></div></div><div style="display:flex; gap:9px; align-items:flex-start; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:7px; height:7px; border-radius:50%; background:#5f6b52; margin-top:5px; flex-shrink:0; "></span><div style="font-size:12.5px; color:#2a2320; line-height:1.45;">Deposit received from Anaya <span style="color:#8a7b6e;">· 1h</span></div></div></div>
+    <div style="background:#fff; border:1px solid rgba(42,35,32,0.1); padding:16px 18px;"><div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;"><span style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;">Vendor Chat</span></div><div style="display:flex; flex-direction:column; gap:12px;"><div style="display:flex; gap:9px; "><span style="width:26px; height:26px; border-radius:50%; background:#c99a4a; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">R</span><div style="max-width:78%;"><div style="font-size:11px; color:#8a7b6e; margin-bottom:3px; ">Aperture Films</div><div style="background:#f1e8d8; color:#2a2320; padding:8px 11px; font-size:12.5px; line-height:1.45;">Clear to start portraits at 4:30 before the reset?</div></div></div><div style="display:flex; gap:9px; flex-direction:row-reverse;"><span style="width:26px; height:26px; border-radius:50%; background:#9c6b3f; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">D</span><div style="max-width:78%;"><div style="font-size:11px; color:#8a7b6e; margin-bottom:3px; text-align:right;">Saubhagya Décor</div><div style="background:#7a2b2e; color:#f7f1e7; padding:8px 11px; font-size:12.5px; line-height:1.45;">Stage is yours by 4:15 👍</div></div></div><div style="display:flex; gap:9px;"><span style="width:26px; height:26px; border-radius:50%; background:#c99a4a; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">R</span><div><div style="font-size:11px; color:#8a7b6e; margin-bottom:3px;">Aperture Films</div><div style="background:#f1e8d8; color:#8a7b6e; padding:8px 12px; font-size:12.5px;"><span style="letter-spacing:2px; animation:pulse 1.4s ease-in-out infinite;">•••</span> typing</div></div></div></div></div>
+    <div style="background:#fff; border:1px solid rgba(42,35,32,0.1); padding:16px 18px;"><div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;"><span style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;">Client Update</span></div><div style="display:flex; gap:9px;"><span style="width:26px; height:26px; border-radius:50%; background:#5f6b52; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">P</span><div><div style="font-size:11px; color:#8a7b6e; margin-bottom:3px;">Vivaha Planners → Anaya</div><div style="font-size:12.5px; line-height:1.5; color:#2a2320;">Timeline is locked and every vendor has confirmed. Nothing left for you to chase ✨</div></div></div></div>
+    <div style="background:#fff; border:1px solid rgba(42,35,32,0.1); padding:16px 18px;"><div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;"><span style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;">Payments</span></div><div style="display:flex; justify-content:space-between; align-items:baseline; padding-bottom:9px; border-bottom:1px solid rgba(42,35,32,0.07);"><span style="font-size:12.5px; color:#4a3f38;">Deposits paid</span><span style="font-family:'Cormorant Garamond',serif; font-size:19px; color:#5f6b52;">$18,400</span></div><div style="display:flex; justify-content:space-between; align-items:baseline; padding:9px 0 0;"><span style="font-size:12.5px; color:#4a3f38;">Balance due · Aug 12</span><span style="font-family:'Cormorant Garamond',serif; font-size:19px; color:#2a2320;">$9,600</span></div></div>
+  </div>
+</div>
+    </div>
+    <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-top:24px;">
+      <sc-for list="{{ capabilities }}" as="c" hint-placeholder-count="5">
+        <span style="background:#fff; border:1px solid rgba(42,35,32,0.14); color:#2a2320; font-size:13px; letter-spacing:0.04em; padding:10px 18px;">{{ c }}</span>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section style="padding:96px 8vw; background:#2a2320; color:#f7f1e7;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="text-align:center; max-width:720px; margin:0 auto 60px;">
+        <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#e3b975; margin-bottom:20px;">Why Loom Exists</div>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,4.2vw,48px); margin:0 0 20px; line-height:1.15;">Today, every event lives in a dozen places at once.</h2>
+        <p style="font-size:16px; line-height:1.75; color:#cbbdb0; margin:0;">Emails and WhatsApp threads. Spreadsheets and shared calendars. Invoices in one app, payments in another, contracts somewhere else entirely. Nothing talks to anything — and the coordination falls on you.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:22px;">
+        <sc-for list="{{ chaos }}" as="c" hint-placeholder-count="4">
+          <div style="border:1px solid rgba(247,241,231,0.16); padding:26px 22px;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:22px; color:#e3b975; margin-bottom:10px;">{{ c.t }}</div>
+            <p style="font-size:13.5px; line-height:1.65; color:#b7a99c; margin:0;">{{ c.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <p style="text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(22px,3vw,32px); color:#f7f1e7; margin:56px auto 0; max-width:640px; line-height:1.4;">That fragmentation isn't a workflow. It's stress.</p>
+    </div>
+  </section>
+
+  <!-- THE SOLUTION / HOW LOOM WEAVES -->
+  <section style="padding:110px 8vw; text-align:center;">
+    <div style="max-width:900px; margin:0 auto;">
+      <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:22px;">How Loom Weaves It Together</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(32px,4.6vw,54px); margin:0 0 22px; line-height:1.12;">Loom becomes the central point of coordination.</h2>
+      <p style="font-size:17.5px; line-height:1.7; color:#4a3f38; max-width:680px; margin:0 auto 46px;">Not another event management tool — <strong style="color:#7a2b2e; font-weight:500;">the operating system that connects every person, every tool, every payment and every conversation into one coordinated event.</strong></p>
+      <div style="display:flex; justify-content:center; gap:0; flex-wrap:wrap; max-width:820px; margin:0 auto;">
+        <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="4">
+          <div style="flex:1; min-width:170px; padding:22px 18px;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:clamp(30px,4vw,42px); color:#7a2b2e; line-height:1.1;">{{ p.big }}</div>
+            <div style="font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:#8a7b6e; margin-top:12px;">{{ p.sub }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(19px,2.4vw,25px); color:#7a2b2e; max-width:660px; margin:44px auto 0; line-height:1.5;">One source of truth — so nobody ever asks, “Which version is the latest?”</p>
+      <p style="font-size:16px; line-height:1.8; color:#4a3f38; max-width:600px; margin:24px auto 0;">One platform for the whole event — the marketplace to find your people, the tools to run your business, and a shared workspace where everyone works from the same truth.</p>
+    </div>
+  </section>
+
+  <!-- EVENT JOURNEY / WORKFLOW -->
+  <section style="padding:100px 8vw; background:#efe3d0;">
+    <div style="max-width:1180px; margin:0 auto; text-align:center;">
+      <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:20px;">One Continuous Flow</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,4.2vw,48px); margin:0 0 52px; line-height:1.14;">From first inquiry to the last thank-you.</h2>
+      <div style="display:flex; align-items:stretch; justify-content:center; flex-wrap:wrap; gap:0;">
+        <sc-for list="{{ journey }}" as="j" hint-placeholder-count="8">
+          <div style="display:flex; align-items:center;">
+            <div style="background:#f7f1e7; border:1px solid rgba(122,43,46,0.18); padding:18px 22px; min-width:132px; text-align:center;">
+              <div style="font-family:'Cormorant Garamond',serif; font-size:14px; color:#c99a4a; letter-spacing:0.06em;">{{ j.n }}</div>
+              <div style="font-size:15px; color:#2a2320; margin-top:5px; font-weight:500;">{{ j.t }}</div>
+            </div>
+            <sc-if value="{{ j.arrow }}" hint-placeholder-val="{{ true }}"><span style="color:#7a2b2e; font-size:20px; padding:0 10px;">→</span></sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(20px,2.6vw,28px); color:#7a2b2e; margin:52px auto 0;">Every step happens inside Loom.</p>
+    </div>
+  </section>
+
+  <!-- SHARED EVENT WORKSPACE — HERO FEATURE -->
+  <section id="workspace" style="padding:100px 8vw; background:#efe3d0;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div style="text-align:center; max-width:760px; margin:0 auto 54px;">
+        <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:20px;">The Shared Event Workspace</div>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(32px,4.6vw,54px); margin:0 0 20px; line-height:1.12;">Everyone. Every detail. <em style="font-style:italic; color:#7a2b2e;">One place.</em></h2>
+        <p style="font-size:16.5px; line-height:1.75; color:#4a3f38; margin:0;">When a client books an event, Loom opens a single shared workspace. Every vendor, the planner and the client collaborate inside it — working from the same timeline, the same files, the same conversation. No more chasing updates. Nothing falls through.</p>
+      </div>
+      <div style="background:#2a2320; padding:14px; box-shadow:0 40px 90px -50px rgba(42,35,32,0.7);">
+        <div style="display:flex; gap:7px; padding:10px 14px;">
+          <span style="width:11px; height:11px; border-radius:50%; background:#7a2b2e;"></span>
+          <span style="width:11px; height:11px; border-radius:50%; background:#c99a4a;"></span>
+          <span style="width:11px; height:11px; border-radius:50%; background:#4a3f38;"></span>
+        </div>
+        <div style="background:#fbf7f0; display:flex; flex-wrap:wrap; min-height:540px; font-family:'Jost',sans-serif; text-align:left; overflow:hidden;">
+  <div style="width:196px; flex:0 0 196px; background:#efe6d7; border-right:1px solid rgba(42,35,32,0.1); padding:20px 0; display:flex; flex-direction:column;">
+    <div style="padding:0 20px 4px; font-family:'Cormorant Garamond',serif; font-size:20px; color:#2a2320;">Anaya &amp; Rohan</div>
+    <div style="padding:0 20px 22px; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;">Wedding · Aug 14</div>
+    <div style="display:flex; align-items:center; gap:10px; padding:9px 20px; font-size:13.5px; color:#7a2b2e; background:#fbf7f0; border-left:2px solid #7a2b2e; font-weight:500;"><span style="color:#7a2b2e; font-size:11px;">◆</span>Overview</div><div style="display:flex; align-items:center; gap:10px; padding:9px 20px; font-size:13.5px; color:#4a3f38; border-left:2px solid transparent;"><span style="color:#a89a8b; font-size:11px;">◆</span>Timeline</div><div style="display:flex; align-items:center; gap:10px; padding:9px 20px; font-size:13.5px; color:#4a3f38; border-left:2px solid transparent;"><span style="color:#a89a8b; font-size:11px;">◆</span>Tasks</div><div style="display:flex; align-items:center; gap:10px; padding:9px 20px; font-size:13.5px; color:#4a3f38; border-left:2px solid transparent;"><span style="color:#a89a8b; font-size:11px;">◆</span>Documents</div><div style="display:flex; align-items:center; gap:10px; padding:9px 20px; font-size:13.5px; color:#4a3f38; border-left:2px solid transparent;"><span style="color:#a89a8b; font-size:11px;">◆</span>Payments</div><div style="display:flex; align-items:center; gap:10px; padding:9px 20px; font-size:13.5px; color:#4a3f38; border-left:2px solid transparent;"><span style="color:#a89a8b; font-size:11px;">◆</span>Messages<span style="margin-left:auto; background:#7a2b2e; color:#f7f1e7; font-size:10px; min-width:16px; height:16px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; padding:0 4px; font-weight:500;">3</span></div>
+    <div style="margin-top:auto; padding:20px 20px 0;">
+      <div style="font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#a89a8b; margin-bottom:10px;">In this workspace</div>
+      <div style="display:flex; gap:6px;"><span style="width:26px; height:26px; border-radius:50%; background:#7a2b2e; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">A</span><span style="width:26px; height:26px; border-radius:50%; background:#5f6b52; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">P</span><span style="width:26px; height:26px; border-radius:50%; background:#c99a4a; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">R</span><span style="width:26px; height:26px; border-radius:50%; background:#4a3f38; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">V</span><span style="width:26px; height:26px; border-radius:50%; background:#9c6b3f; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">D</span></div>
+    </div>
+  </div>
+  <div style="flex:1 1 360px; min-width:300px; padding:22px 22px; display:flex; flex-direction:column; gap:16px;">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:24px; color:#2a2320;">Overview</div>
+      <span style="background:#7a2b2e; color:#f7f1e7; font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase; padding:8px 14px;">Event day in 12 days</span>
+    </div>
+    <div style="background:#fff; border:1px solid rgba(42,35,32,0.1); padding:16px 18px;"><div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;"><span style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;">Shared Timeline</span><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#e7ede1; color:#5f6b52; padding:3px 9px; border-radius:999px; white-space:nowrap;">On track</span></div><div style="display:flex; align-items:center; gap:12px; padding:9px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:7px; height:7px; border-radius:50%; background:#c99a4a; flex-shrink:0;"></span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320;">Mehndi &amp; Sangeet</div><div style="font-size:11.5px; color:#8a7b6e;">Aug 12 · 6:00 PM</div></div><span style="width:26px; height:26px; border-radius:50%; background:#9c6b3f; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">D</span><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#e7ede1; color:#5f6b52; padding:3px 9px; border-radius:999px; white-space:nowrap;">Confirmed</span></div><div style="display:flex; align-items:center; gap:12px; padding:9px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:7px; height:7px; border-radius:50%; background:#c99a4a; flex-shrink:0;"></span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320;">Baraat &amp; Ceremony</div><div style="font-size:11.5px; color:#8a7b6e;">Aug 14 · 10:00 AM</div></div><span style="width:26px; height:26px; border-radius:50%; background:#c99a4a; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">R</span><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#f6ecd6; color:#9c6b3f; padding:3px 9px; border-radius:999px; white-space:nowrap;">In progress</span></div><div style="display:flex; align-items:center; gap:12px; padding:9px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:7px; height:7px; border-radius:50%; background:#c99a4a; flex-shrink:0;"></span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320;">Reception</div><div style="font-size:11.5px; color:#8a7b6e;">Aug 14 · 7:45 PM</div></div><span style="width:26px; height:26px; border-radius:50%; background:#4a3f38; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">V</span><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#efe6d7; color:#8a7b6e; padding:3px 9px; border-radius:999px; white-space:nowrap;">Upcoming</span></div></div>
+    <div style="background:#fff; border:1px solid rgba(42,35,32,0.1); padding:16px 18px;"><div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;"><span style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;">Tasks &amp; Owners</span><span style="font-size:11.5px; color:#8a7b6e;">2 of 4 done</span></div><div style="display:flex; align-items:center; gap:11px; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:16px; height:16px; border-radius:4px; border:1.5px solid #5f6b52; background:#5f6b52; color:#fff; font-size:11px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;">✓</span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#8a7b6e; text-decoration:line-through;">Confirm mandap floral palette</div></div><span style="width:26px; height:26px; border-radius:50%; background:#9c6b3f; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">D</span><span style="font-size:11.5px; color:#8a7b6e; white-space:nowrap;">Done</span></div><div style="display:flex; align-items:center; gap:11px; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:16px; height:16px; border-radius:4px; border:1.5px solid #5f6b52; background:#5f6b52; color:#fff; font-size:11px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;">✓</span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#8a7b6e; text-decoration:line-through;">Share ceremony run of show</div></div><span style="width:26px; height:26px; border-radius:50%; background:#5f6b52; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">P</span><span style="font-size:11.5px; color:#8a7b6e; white-space:nowrap;">Done</span></div><div style="display:flex; align-items:center; gap:11px; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:16px; height:16px; border-radius:4px; border:1.5px solid #c9bdae; background:#fff; color:#fff; font-size:11px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;"></span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320; ">Final headcount to caterer</div></div><span style="width:26px; height:26px; border-radius:50%; background:#5f6b52; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">P</span><span style="font-size:11.5px; color:#8a7b6e; white-space:nowrap;">Aug 8</span></div><div style="display:flex; align-items:center; gap:11px; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:16px; height:16px; border-radius:4px; border:1.5px solid #c9bdae; background:#fff; color:#fff; font-size:11px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;"></span><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320; ">Deliver portrait shotlist</div></div><span style="width:26px; height:26px; border-radius:50%; background:#c99a4a; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">R</span><span style="font-size:11.5px; color:#8a7b6e; white-space:nowrap;">Aug 10</span></div></div>
+  </div>
+  <div style="flex:1 1 260px; min-width:240px; padding:22px 22px 22px 0; display:flex; flex-direction:column; gap:16px;">
+    <div style="background:#fff; border:1px solid rgba(42,35,32,0.1); padding:16px 18px;"><div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;"><span style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;"><span style="display:inline-flex; align-items:center; gap:7px;"><span style="width:7px;height:7px;border-radius:50%;background:#5f6b52;animation:pulse 1.8s ease-in-out infinite;"></span>Recent activity</span></span></div><div style="display:flex; gap:9px; align-items:flex-start; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:7px; height:7px; border-radius:50%; background:#5f6b52; margin-top:5px; flex-shrink:0; animation:pulse 1.8s ease-in-out infinite;"></span><div style="font-size:12.5px; color:#2a2320; line-height:1.45;">Saubhagya Décor confirmed the reset <span style="color:#8a7b6e;">· 2m</span></div></div><div style="display:flex; gap:9px; align-items:flex-start; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:7px; height:7px; border-radius:50%; background:#5f6b52; margin-top:5px; flex-shrink:0; "></span><div style="font-size:12.5px; color:#2a2320; line-height:1.45;">Aperture Films uploaded a gallery <span style="color:#8a7b6e;">· 14m</span></div></div><div style="display:flex; gap:9px; align-items:flex-start; padding:8px 0; border-top:1px solid rgba(42,35,32,0.07);"><span style="width:7px; height:7px; border-radius:50%; background:#5f6b52; margin-top:5px; flex-shrink:0; "></span><div style="font-size:12.5px; color:#2a2320; line-height:1.45;">Deposit received from Anaya <span style="color:#8a7b6e;">· 1h</span></div></div></div>
+    <div style="background:#fff; border:1px solid rgba(42,35,32,0.1); padding:16px 18px;"><div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;"><span style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;">Vendor Chat</span></div><div style="display:flex; flex-direction:column; gap:12px;"><div style="display:flex; gap:9px; "><span style="width:26px; height:26px; border-radius:50%; background:#c99a4a; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">R</span><div style="max-width:78%;"><div style="font-size:11px; color:#8a7b6e; margin-bottom:3px; ">Aperture Films</div><div style="background:#f1e8d8; color:#2a2320; padding:8px 11px; font-size:12.5px; line-height:1.45;">Clear to start portraits at 4:30 before the reset?</div></div></div><div style="display:flex; gap:9px; flex-direction:row-reverse;"><span style="width:26px; height:26px; border-radius:50%; background:#9c6b3f; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">D</span><div style="max-width:78%;"><div style="font-size:11px; color:#8a7b6e; margin-bottom:3px; text-align:right;">Saubhagya Décor</div><div style="background:#7a2b2e; color:#f7f1e7; padding:8px 11px; font-size:12.5px; line-height:1.45;">Stage is yours by 4:15 👍</div></div></div><div style="display:flex; gap:9px;"><span style="width:26px; height:26px; border-radius:50%; background:#c99a4a; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">R</span><div><div style="font-size:11px; color:#8a7b6e; margin-bottom:3px;">Aperture Films</div><div style="background:#f1e8d8; color:#8a7b6e; padding:8px 12px; font-size:12.5px;"><span style="letter-spacing:2px; animation:pulse 1.4s ease-in-out infinite;">•••</span> typing</div></div></div></div></div>
+    <div style="background:#fff; border:1px solid rgba(42,35,32,0.1); padding:16px 18px;"><div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;"><span style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;">Client Update</span></div><div style="display:flex; gap:9px;"><span style="width:26px; height:26px; border-radius:50%; background:#5f6b52; color:#f7f1e7; font-size:11px; display:inline-flex; align-items:center; justify-content:center; font-weight:500; flex-shrink:0;">P</span><div><div style="font-size:11px; color:#8a7b6e; margin-bottom:3px;">Vivaha Planners → Anaya</div><div style="font-size:12.5px; line-height:1.5; color:#2a2320;">Timeline is locked and every vendor has confirmed. Nothing left for you to chase ✨</div></div></div></div>
+    <div style="background:#fff; border:1px solid rgba(42,35,32,0.1); padding:16px 18px;"><div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;"><span style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e;">Payments</span></div><div style="display:flex; justify-content:space-between; align-items:baseline; padding-bottom:9px; border-bottom:1px solid rgba(42,35,32,0.07);"><span style="font-size:12.5px; color:#4a3f38;">Deposits paid</span><span style="font-family:'Cormorant Garamond',serif; font-size:19px; color:#5f6b52;">$18,400</span></div><div style="display:flex; justify-content:space-between; align-items:baseline; padding:9px 0 0;"><span style="font-size:12.5px; color:#4a3f38;">Balance due · Aug 12</span><span style="font-family:'Cormorant Garamond',serif; font-size:19px; color:#2a2320;">$9,600</span></div></div>
+  </div>
+</div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:44px;">
+        <sc-for list="{{ workspace }}" as="w" hint-placeholder-count="8">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <span style="color:#c99a4a; font-family:'Cormorant Garamond',serif; font-size:20px; line-height:1;">◆</span>
+            <div>
+              <div style="font-size:14.5px; color:#2a2320; font-weight:500;">{{ w.t }}</div>
+              <div style="font-size:12.5px; color:#6b5e54; margin-top:3px; line-height:1.5;">{{ w.d }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENDOR-TO-VENDOR COORDINATION -->
+  <section style="padding:100px 8vw;">
+    <div style="max-width:1240px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+      <div>
+        <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:20px;">Vendors, Talking to Vendors</div>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,4vw,48px); margin:0 0 22px; line-height:1.12;">The people running your day can finally talk <em style="font-style:italic; color:#7a2b2e;">to each other.</em></h2>
+        <p style="font-size:16px; line-height:1.78; color:#4a3f38; margin:0 0 20px;">The photographer needs the décor timeline. The caterer needs the venue's kitchen access. The DJ needs the run of show. Today, all of it routes through the client — every question a delay, every answer a game of telephone.</p>
+        <p style="font-size:16px; line-height:1.78; color:#4a3f38; margin:0;">Inside a Loom workspace, vendors coordinate directly. They sort out the details between themselves, in context, without waiting on the client — so the timeline keeps moving and the client stays out of the logistics.</p>
+      </div>
+      <div style="background:#efe3d0; padding:26px 24px;">
+        <div style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#8a7b6e; margin-bottom:18px;">Kapoor–Shah Wedding · Vendor Channel</div>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <sc-for list="{{ vendorChat }}" as="m" hint-placeholder-count="4">
+            <div style="max-width:80%; align-self:{{ m.align }};">
+              <div style="font-size:11px; color:#8a7b6e; margin-bottom:4px; padding:0 4px;">{{ m.who }}</div>
+              <div style="background:{{ m.bg }}; color:{{ m.fg }}; padding:13px 16px; font-size:14px; line-height:1.55;">{{ m.text }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top:18px; padding-top:14px; border-top:1px solid rgba(42,35,32,0.12); font-size:12px; color:#8a7b6e; font-style:italic;">Sorted in minutes — the client never had to lift a finger.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKETPLACE -->
+  <section id="marketplace" style="padding:110px 8vw; max-width:1320px; margin:0 auto;">
+    <div style="text-align:center; max-width:680px; margin:0 auto 48px;">
+      <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:20px;">The Marketplace</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,4.2vw,48px); margin:0 0 18px; line-height:1.14;">Find the people who bring it to life.</h2>
+      <p style="font-size:16px; line-height:1.75; color:#4a3f38; margin:0;">Discover professionals with real collaboration history — teams that have already worked beautifully together on Loom. Book them, and they flow straight into your workspace.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
+      <sc-for list="{{ categories }}" as="c" hint-placeholder-count="6">
+        <a href="app.html" style="display:block; position:relative; overflow:hidden; height:230px;">
+          <img src="{{ c.img }}" alt="{{ c.name }}" style="width:100%; height:100%; object-fit:cover;">
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(42,35,32,0.78), rgba(42,35,32,0) 60%);"></div>
+          <div style="position:absolute; left:20px; bottom:18px; color:#f7f1e7;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:23px;">{{ c.name }}</div>
+            <div style="font-size:12px; color:#e3b975; margin-top:3px; letter-spacing:0.04em;">{{ c.count }} vendors</div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="app.html" style="border:1px solid rgba(42,35,32,0.3); color:#2a2320; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; padding:16px 38px; display:inline-block;" style-hover="border-color:#2a2320;">Explore the Marketplace</a>
+    </div>
+  </section>
+
+  <!-- FOR PROFESSIONALS / BUSINESS MANAGEMENT -->
+  <section id="professionals" style="padding:100px 8vw; background:#2a2320; color:#f7f1e7;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+        <div>
+          <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#e3b975; margin-bottom:20px;">For Event Professionals</div>
+          <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,4vw,48px); margin:0 0 22px; line-height:1.12;">Run your business. Deliver unforgettable events. Never choose between the two again.</h2>
+          <p style="font-size:15.5px; line-height:1.78; color:#cbbdb0; margin:0 0 30px;">Clients, bookings, staff, inventory and payments — woven into one calm, connected home for your work. Loom handles the coordination so your craft gets your attention.</p>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <sc-for list="{{ business }}" as="b" hint-placeholder-count="5">
+              <div style="display:flex; gap:14px; align-items:baseline; border-bottom:1px solid rgba(247,241,231,0.14); padding-bottom:14px;">
+                <span style="color:#e3b975; font-size:13px;">◆</span>
+                <div>
+                  <span style="font-size:15px; color:#f7f1e7; font-weight:500;">{{ b.t }}</span>
+                  <span style="font-size:14px; color:#b7a99c;"> — {{ b.d }}</span>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <a href="app.html#signup" style="display:inline-block; margin-top:34px; background:#f7f1e7; color:#2a2320; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; padding:16px 38px;" style-hover="background:#e3b975;">Grow With Loom</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:26px;">
+          <div style="">
+            <div style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#e3b975; margin-bottom:10px;">A photographer’s dashboard</div>
+            <div style="background:#1f1a18; padding:10px; box-shadow:0 30px 70px -45px rgba(0,0,0,0.8);"><div style="background:#fff; font-family:'Jost',sans-serif; text-align:left;">
+    <div style="display:flex; align-items:center; gap:12px; padding:18px 20px; border-bottom:1px solid rgba(42,35,32,0.08);">
+      <span style="width:38px; height:38px; border-radius:50%; background:#7a2b2e; color:#f7f1e7; font-family:'Cormorant Garamond',serif; font-size:17px; display:inline-flex; align-items:center; justify-content:center;">A</span>
+      <div style="flex:1;"><div style="font-size:15px; color:#2a2320; font-weight:500;">Aperture Films</div><div style="font-size:11.5px; letter-spacing:0.04em; text-transform:uppercase; color:#8a7b6e; margin-top:2px;">Photography · Toronto</div></div>
+      <span style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#7a2b2e;">This week ▾</span>
+    </div>
+    <div style="display:flex; padding:18px 20px; border-bottom:1px solid rgba(42,35,32,0.08);"><div style="flex:1;  padding:0 14px; padding-left:0;"><div style="font-family:'Cormorant Garamond',serif; font-size:26px; color:#2a2320; line-height:1;">4</div><div style="font-size:11px; color:#8a7b6e; margin-top:6px; line-height:1.3;">Shoots this month</div></div><div style="flex:1; border-left:1px solid rgba(42,35,32,0.1); padding:0 14px; "><div style="font-family:'Cormorant Garamond',serif; font-size:26px; color:#2a2320; line-height:1;">2</div><div style="font-size:11px; color:#8a7b6e; margin-top:6px; line-height:1.3;">Galleries to deliver</div></div><div style="flex:1; border-left:1px solid rgba(42,35,32,0.1); padding:0 14px; "><div style="font-family:'Cormorant Garamond',serif; font-size:26px; color:#2a2320; line-height:1;">$6.2k</div><div style="font-size:11px; color:#8a7b6e; margin-top:6px; line-height:1.3;">Open pipeline</div></div></div>
+    <div style="padding:16px 20px 18px;">
+      <div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e; margin-bottom:2px;">Upcoming shoots</div>
+      <div style="display:flex; align-items:center; gap:12px; padding:11px 0; border-top:1px solid rgba(42,35,32,0.07);"><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320;">Anaya &amp; Rohan</div><div style="font-size:11.5px; color:#8a7b6e; margin-top:2px;">Aug 14 · Ceremony + Reception</div></div><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#e7ede1; color:#5f6b52; padding:3px 9px; border-radius:999px; white-space:nowrap;">Shotlist ready</span></div><div style="display:flex; align-items:center; gap:12px; padding:11px 0; border-top:1px solid rgba(42,35,32,0.07);"><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320;">Meera &amp; Sam</div><div style="font-size:11.5px; color:#8a7b6e; margin-top:2px;">Aug 22 · Engagement session</div></div><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#f6ecd6; color:#9c6b3f; padding:3px 9px; border-radius:999px; white-space:nowrap;">Deposit due</span></div><div style="display:flex; align-items:center; gap:12px; padding:11px 0; border-top:1px solid rgba(42,35,32,0.07);"><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320;">Priya &amp; Dev — gallery</div><div style="font-size:11.5px; color:#8a7b6e; margin-top:2px;">420 photos · editing</div></div><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#efe6d7; color:#8a7b6e; padding:3px 9px; border-radius:999px; white-space:nowrap;">60% edited</span></div>
+    </div>
+  </div></div>
+          </div>
+          <div style="margin-left:40px;">
+            <div style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#e3b975; margin-bottom:10px;">A caterer’s dashboard</div>
+            <div style="background:#1f1a18; padding:10px; box-shadow:0 30px 70px -45px rgba(0,0,0,0.8);"><div style="background:#fff; font-family:'Jost',sans-serif; text-align:left;">
+    <div style="display:flex; align-items:center; gap:12px; padding:18px 20px; border-bottom:1px solid rgba(42,35,32,0.08);">
+      <span style="width:38px; height:38px; border-radius:50%; background:#9c6b3f; color:#f7f1e7; font-family:'Cormorant Garamond',serif; font-size:17px; display:inline-flex; align-items:center; justify-content:center;">Z</span>
+      <div style="flex:1;"><div style="font-size:15px; color:#2a2320; font-weight:500;">Zaika Catering Co.</div><div style="font-size:11.5px; letter-spacing:0.04em; text-transform:uppercase; color:#8a7b6e; margin-top:2px;">Catering · New Jersey</div></div>
+      <span style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#7a2b2e;">This week ▾</span>
+    </div>
+    <div style="display:flex; padding:18px 20px; border-bottom:1px solid rgba(42,35,32,0.08);"><div style="flex:1;  padding:0 14px; padding-left:0;"><div style="font-family:'Cormorant Garamond',serif; font-size:26px; color:#2a2320; line-height:1;">3</div><div style="font-size:11px; color:#8a7b6e; margin-top:6px; line-height:1.3;">Events this week</div></div><div style="flex:1; border-left:1px solid rgba(42,35,32,0.1); padding:0 14px; "><div style="font-family:'Cormorant Garamond',serif; font-size:26px; color:#2a2320; line-height:1;">540</div><div style="font-size:11px; color:#8a7b6e; margin-top:6px; line-height:1.3;">Covers to plate</div></div><div style="flex:1; border-left:1px solid rgba(42,35,32,0.1); padding:0 14px; "><div style="font-family:'Cormorant Garamond',serif; font-size:26px; color:#2a2320; line-height:1;">8</div><div style="font-size:11px; color:#8a7b6e; margin-top:6px; line-height:1.3;">Staff scheduled</div></div></div>
+    <div style="padding:16px 20px 18px;">
+      <div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7b6e; margin-bottom:2px;">This week’s events</div>
+      <div style="display:flex; align-items:center; gap:12px; padding:11px 0; border-top:1px solid rgba(42,35,32,0.07);"><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320;">Kapoor Sangeet</div><div style="font-size:11.5px; color:#8a7b6e; margin-top:2px;">Aug 12 · 220 guests · 3 counters</div></div><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#e7ede1; color:#5f6b52; padding:3px 9px; border-radius:999px; white-space:nowrap;">Menu locked</span></div><div style="display:flex; align-items:center; gap:12px; padding:11px 0; border-top:1px solid rgba(42,35,32,0.07);"><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320;">Verma Reception</div><div style="font-size:11.5px; color:#8a7b6e; margin-top:2px;">Aug 18 · 320 guests</div></div><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#f6ecd6; color:#9c6b3f; padding:3px 9px; border-radius:999px; white-space:nowrap;">Headcount pending</span></div><div style="display:flex; align-items:center; gap:12px; padding:11px 0; border-top:1px solid rgba(42,35,32,0.07);"><div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#2a2320;">Prep &amp; inventory check</div><div style="font-size:11.5px; color:#8a7b6e; margin-top:2px;">Chaat station · dessert bar</div></div><span style="font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; background:#efe6d7; color:#8a7b6e; padding:3px 9px; border-radius:999px; white-space:nowrap;">Due Aug 10</span></div>
+    </div>
+  </div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NETWORK EFFECT -->
+  <section style="padding:110px 8vw; background:#2a2320; color:#f7f1e7;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="text-align:center; max-width:700px; margin:0 auto 60px;">
+        <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#e3b975; margin-bottom:20px;">The Network Effect</div>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(32px,4.6vw,54px); margin:0 0 20px; line-height:1.12;">Every event grows <em style="font-style:italic; color:#e3b975;">the network.</em></h2>
+        <p style="font-size:16.5px; line-height:1.75; color:#cbbdb0; margin:0;">Every event brings together people who've never worked together before. Loom doesn't just organize the event — it remembers those relationships.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0; max-width:640px; margin:0 auto;">
+        <sc-for list="{{ network }}" as="n" hint-placeholder-count="5">
+          <div style="display:flex; gap:22px; align-items:flex-start;">
+            <div style="display:flex; flex-direction:column; align-items:center; align-self:stretch;">
+              <div style="width:34px; height:34px; border:1px solid #c99a4a; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:15px; color:#e3b975; flex-shrink:0;">{{ n.i }}</div>
+              <sc-if value="{{ n.line }}" hint-placeholder-val="{{ true }}"><div style="width:1px; flex:1; background:linear-gradient(to bottom, #c99a4a, rgba(201,154,74,0.25)); min-height:26px;"></div></sc-if>
+            </div>
+            <div style="padding-bottom:26px;">
+              <div style="font-family:'Cormorant Garamond',serif; font-size:22px; color:#f7f1e7; line-height:1.3;">{{ n.t }}</div>
+              <div style="font-size:14px; color:#b7a99c; margin-top:4px; line-height:1.6;">{{ n.d }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:54px; border-top:1px solid rgba(247,241,231,0.14); padding-top:44px;">
+        <div style="text-align:center; font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#e3b975; margin-bottom:26px;">The Loom Flywheel</div>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:12px 8px; max-width:960px; margin:0 auto;">
+          <sc-for list="{{ flywheel }}" as="s" hint-placeholder-count="9">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="border:1px solid rgba(227,185,117,0.45); color:#f7f1e7; font-size:13px; padding:9px 15px;">{{ s }}</span>
+              <span style="color:#c99a4a; font-size:14px;">→</span>
+            </div>
+          </sc-for>
+          <span style="font-family:'Cormorant Garamond',serif; font-style:italic; color:#e3b975; font-size:17px; padding-left:2px;">repeat, forever</span>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:44px;">
+        <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(22px,3vw,32px); color:#f7f1e7; margin:0 0 10px; line-height:1.4;">The next booking starts with a stronger network than the last.</p>
+        <p style="font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#e3b975; margin:0;">Every event makes the marketplace smarter</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section style="padding:100px 8vw; text-align:center;">
+    <div style="max-width:760px; margin:0 auto;">
+      <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:20px;">Integrations</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,4.2vw,48px); margin:0 0 18px; line-height:1.14;">Loom doesn’t replace your tools. It connects them.</h2>
+      <p style="font-size:16px; line-height:1.75; color:#4a3f38; margin:0 0 40px;">Loom weaves into your calendar, payments, messaging and email — so the tools you rely on finally work as one, without leaving your workspace.</p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
+        <sc-for list="{{ integrations }}" as="i" hint-placeholder-count="8">
+          <span style="border:1px solid rgba(42,35,32,0.2); color:#4a3f38; padding:12px 24px; font-size:14px; background:#fff;">{{ i }}</span>
+        </sc-for>
+      </div>
+      <a href="integrations.html" style="display:inline-block; margin-top:36px; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; color:#7a2b2e;">See all integrations →</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="padding:100px 8vw; background:#efe3d0;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:52px;">
+        <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:18px;">Trusted by the people behind the moments</div>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,4.2vw,48px); margin:0 0 14px;">Calm, connected, unforgettable.</h2>
+        <p style="font-size:15.5px; color:#4a3f38; margin:0; max-width:560px; margin-left:auto; margin-right:auto;">Teams on Loom report less time coordinating, fewer dropped details, and events that run on schedule.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:26px;">
+        <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+          <div style="background:#f7f1e7; padding:34px 30px;">
+            <div style="color:#c99a4a; font-size:18px; margin-bottom:16px;">★★★★★</div>
+            <p style="font-family:'Cormorant Garamond',serif; font-size:20px; line-height:1.5; color:#2a2320; margin:0 0 24px;">"{{ t.quote }}"</p>
+            <div style="font-size:14px; color:#2a2320; font-weight:500;">{{ t.name }}</div>
+            <div style="font-size:12.5px; color:#8a7b6e; margin-top:3px;">{{ t.role }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING TEASER -->
+  <section style="padding:110px 8vw; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:20px;">Pricing</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(30px,4.2vw,48px); margin:0 0 18px; line-height:1.14;">Clients plan for free. You only pay for your own account.</h2>
+      <p style="font-size:16px; line-height:1.75; color:#4a3f38; margin:0 0 30px;">A simple monthly plan plus a small commission on the events you win. Clients never pay — because they aren’t your customers; they’re the reason professionals become one. Solo, Studio or Agency, with the commission dropping as you grow.</p>
+      <div style="display:flex; gap:26px; justify-content:center; flex-wrap:wrap; margin-bottom:36px; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; color:#8a7b6e;"><span><span style="color:#7a2b2e;">Solo</span> · Independent</span><span><span style="color:#7a2b2e;">Studio</span> · Small teams</span><span><span style="color:#7a2b2e;">Agency</span> · At scale</span></div>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="pricing.html" style="background:#7a2b2e; color:#f7f1e7; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; padding:17px 40px;" style-hover="background:#5f2022;">View Pricing</a>
+        <a href="app.html#signup" style="border:1px solid rgba(42,35,32,0.3); color:#2a2320; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; padding:17px 40px;" style-hover="border-color:#2a2320;">Start Free</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section style="padding:110px 8vw; background:#efe3d0; text-align:center;">
+    <div style="max-width:780px; margin:0 auto;">
+      <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#7a2b2e; margin-bottom:20px;">What Loom Becomes</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(32px,4.6vw,54px); margin:0 0 34px; line-height:1.12;">Every event makes <em style="font-style:italic; color:#7a2b2e;">the next one better.</em></h2>
+      <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:36px;">
+        <sc-for list="{{ vision }}" as="v" hint-placeholder-count="4">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:clamp(19px,2.4vw,25px); color:#2a2320; line-height:1.4;">{{ v }}</div>
+        </sc-for>
+      </div>
+      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(21px,2.8vw,29px); color:#7a2b2e; margin:0;">Because unforgettable events shouldn't start from scratch.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:120px 8vw; text-align:center; background:#2a2320; color:#f7f1e7;">
+    <div style="font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:#e3b975; margin-bottom:24px;">The connective infrastructure for unforgettable events</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(34px,5vw,60px); margin:0 auto 20px; max-width:820px; line-height:1.1;">Run the entire event from one place.</h2>
+    <p style="font-size:16.5px; line-height:1.7; color:#cbbdb0; max-width:520px; margin:0 auto 38px;">Every unforgettable event begins with people. Every unforgettable business is built on relationships. Loom remembers both.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="app.html#signup" style="background:#f7f1e7; color:#2a2320; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; padding:17px 42px;" style-hover="background:#e3b975;">Get Started</a>
+      <a href="#professionals" style="border:1px solid rgba(247,241,231,0.4); color:#f7f1e7; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; padding:17px 42px;" style-hover="border-color:#f7f1e7;">For Professionals</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding:70px 8vw 50px; border-top:1px solid rgba(42,35,32,0.12);">
+    <div style="max-width:1320px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px;">
+      <div>
+        <img src="assets/loom-logo-full.png" alt="Loom — weaving connections for unforgettable events" style="width:150px; height:auto; margin-bottom:16px;">
+        <p style="font-size:13px; line-height:1.7; color:#6b5e54; margin:0; max-width:280px;">The connective infrastructure of the event industry — weaving every client, vendor and detail into one living network.</p>
+      </div>
+      <div>
+        <div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#2a2320; margin-bottom:16px;">Platform</div>
+        <div style="display:flex; flex-direction:column; gap:10px; font-size:13px; color:#6b5e54;"><a href="#workspace">Shared Workspace</a><a href="#marketplace">Marketplace</a><a href="integrations.html">Integrations</a><a href="pricing.html">Pricing</a></div>
+      </div>
+      <div>
+        <div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#2a2320; margin-bottom:16px;">Professionals</div>
+        <div style="display:flex; flex-direction:column; gap:10px; font-size:13px; color:#6b5e54;"><a href="#professionals">Grow With Loom</a><a href="early-access.html">Request Early Access</a><a href="pricing.html">Business Plans</a><a href="loom-platform-standalone.html">The Platform</a></div>
+      </div>
+      <div>
+        <div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#2a2320; margin-bottom:16px;">Company</div>
+        <div style="display:flex; flex-direction:column; gap:10px; font-size:13px; color:#6b5e54;"><a href="#">About</a><a href="#">Real Events</a><a href="#">Contact</a><a href="#">hello@theloomplatform.com</a></div>
+      </div>
+    </div>
+    <div style="max-width:1320px; margin:40px auto 0; padding-top:24px; border-top:1px solid rgba(42,35,32,0.1); display:flex; justify-content:space-between; font-size:12px; color:#8a7b6e; flex-wrap:wrap; gap:10px;">
+      <span>© 2026 Loom · theloomplatform.com</span>
+      <span style="font-family:'Cormorant Garamond',serif; font-style:italic; letter-spacing:0.1em;">Weaving connections for unforgettable events</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const categories = [
+      { name:'Venues', count:'1,120', img:'assets/cat-venues.jpg' },
+      { name:'Photo & Video', count:'940', img:'assets/cat-photo.jpg' },
+      { name:'Makeup & Hair', count:'810', img:'assets/cat-makeup.jpg' },
+      { name:'Décor & Design', count:'560', img:'assets/cat-decor.jpg' },
+      { name:'Catering', count:'700', img:'assets/cat-catering.jpg' },
+      { name:'Planners', count:'420', img:'assets/cat-planners.jpg' },
+    ];
+    return {
+      flywheel: ['A client creates a workspace','Invites professionals','Professionals collaborate','Profiles & reputations grow','Future clients discover them','More bookings','More professionals join','A better marketplace','More clients'],
+      participants: ['Client','Planner','Photographer','Venue','Décor'],
+      capabilities: ['Shared Workspace','Marketplace','Timeline','Conversations','Payments'],
+      vision: [
+        'Every event creates trusted relationships.',
+        'Every vendor gains reputation.',
+        'Every successful collaboration becomes easier to repeat.',
+        'Every booking strengthens the network.',
+      ],
+      network: [
+        { i:'01', t:'A client invites their photographer.', d:'The workspace opens, and the first thread is woven.', line:true },
+        { i:'02', t:'The photographer brings the florist she always works with.', d:'A trusted pairing, now on the platform together.', line:true },
+        { i:'03', t:'The florist recommends a celebrant. The venue joins for logistics.', d:'Each professional pulls in the people they already trust.', line:true },
+        { i:'04', t:'The stylist and DJ come aboard for event day.', d:'A one-off team becomes a remembered network.', line:true },
+        { i:'05', t:'The next client finds a web of professionals who already work beautifully together.', d:'Proven teams, real collaboration history — not a cold directory.', line:false },
+      ],
+      vendorChat: [
+        { who:'Aperture Films · Photography', text:'Are we clear to start couple portraits at 4:30, before the décor team resets the mandap?', align:'flex-start', bg:'#f7f1e7', fg:'#2a2320' },
+        { who:'Saubhagya Décor', text:'Give us till 4:15 and the stage is all yours. We\'ll keep the aisle floral in place for you.', align:'flex-end', bg:'#7a2b2e', fg:'#f7f1e7' },
+        { who:'Rani Mahal Venue', text:'Kitchen access opens 3:00 for catering — loading dock is on the east side.', align:'flex-start', bg:'#f7f1e7', fg:'#2a2320' },
+        { who:'Zaika Catering', text:'Perfect, we\'ll be set. Plated service still locked for 7:45 on the timeline. 👍', align:'flex-end', bg:'#7a2b2e', fg:'#f7f1e7' },
+      ],
+      journey: [
+        { n:'01', t:'Inquiry', arrow:true },
+        { n:'02', t:'Quote', arrow:true },
+        { n:'03', t:'Booking', arrow:true },
+        { n:'04', t:'Timeline', arrow:true },
+        { n:'05', t:'Payments', arrow:true },
+        { n:'06', t:'Event Day', arrow:true },
+        { n:'07', t:'Reviews', arrow:true },
+        { n:'08', t:'Referrals', arrow:false },
+      ],
+      trust: ['Weddings','Corporate & Conferences','Galas & Fundraisers','Brand Events','Milestone Celebrations'],
+      chaos: [
+        { t:'Scattered chats', d:'Details buried across email, WhatsApp and DMs — impossible to find when it matters.' },
+        { t:'Spreadsheet sprawl', d:'Timelines and budgets in files that are always one version behind.' },
+        { t:'Disconnected money', d:'Invoices, deposits and payments living in apps that never reconcile.' },
+        { t:'No shared truth', d:'Every vendor working from a different version of the same event.' },
+      ],
+      pillars: [
+        { big:'One', sub:'Platform' },
+        { big:'One', sub:'Timeline' },
+        { big:'One', sub:'Conversation' },
+        { big:'One', sub:'Source of truth' },
+      ],
+      workspace: [
+        { t:'Shared timeline', d:'One schedule everyone plans against.' },
+        { t:'Tasks & owners', d:'Nothing falls through the cracks.' },
+        { t:'Documents', d:'Contracts and files in one home.' },
+        { t:'Payments', d:'Deposits and invoices, in context.' },
+        { t:'Vendor chat', d:'Every conversation, kept together.' },
+        { t:'Client updates', d:'Clients see progress in real time.' },
+        { t:'Live status', d:'Know exactly where the event stands.' },
+        { t:'Event day', d:'A calm, coordinated run of show.' },
+      ],
+      categories,
+      business: [
+        { t:'Clients', d:'every booking, brief and history in one calm CRM.' },
+        { t:'Payments', d:'deposits, invoices and reminders, handled.' },
+        { t:'Staff & teams', d:'schedule your crew across every event.' },
+        { t:'Inventory', d:'track what you own and what goes where.' },
+        { t:'Bookings', d:'inquiries to confirmed dates, without the back-and-forth.' },
+      ],
+      integrations: ['Google Calendar','Stripe','WhatsApp','Gmail','Outlook','QuickBooks','Zoom','Dropbox'],
+      testimonials: [
+        { quote:'Our team cut coordination time by 60%. For the first time, my clients and I are looking at the same plan.', name:'Anaya Kapoor', role:'Wedding Planner, London' },
+        { quote:'In fifteen years of weddings, this was the first where every vendor worked from the same timeline.', name:'Marcus Reyes', role:'Event Photographer, Toronto' },
+        { quote:'42 vendors, three days, zero dropped details. Our annual gala ran on Loom.', name:'Priya Menon', role:'Foundation Events Lead, Dubai' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
